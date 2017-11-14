@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Stocker</title>
+
+    <link href="vendor/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+<body>
+
+<!-- NAVBAR //////////////////////////////////////////////////// -->
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://www.danma.es"><img src="img/danma-logo.png" alt="Danma">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<!-- <li class="active"><a href="#">Home</a></li> -->
+				<li><a href="#">STOCK</a></li>
+				<li><a href="#">OBRAS</a></li>
+				<li><a href="#">CONTROL</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<div class="container">
+	<h1> STOCK CALEFACCIÓN </h1>
+	<button type="button" class="btn btn-default">Nuevo producto</button>
+
+    <table class="rwd-table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Cantidad</th>
+            <th>Unidades</th>
+            <th>Marca</th>
+            <th>Descripción</th>
+            <th>Referencia</th>
+            <th>Ud caja</th>
+            <th>Provedor</th>
+            <th>Precio Ud</th>
+            <th>Precio Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+        <tr>
+            <td data-th="Fecha">13/11/2017</td>
+            <td data-th="Cantidad">1</td>
+            <td data-th="Unidades">Unidad</td>
+            <td data-th="Marca">Roca</td>
+            <td data-th="Descripción">Elemento radiador de Aluminio modelo Dubal 70</td>
+            <td data-th="Referencia">15de521qq</td>
+            <td data-th="Ud caja">1</td>
+            <td data-th="Provedor">Roca</td>
+            <td data-th="Precio Ud">16.95</td>
+            <td data-th="Precio Total">16.95</td>
+            <td data-th="Acción" class="text-center">
+            	<a href="#" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
+            	<a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
+        </tr>
+        <tr>
+            <td data-th="Fecha">13/11/2017</td>
+            <td data-th="Cantidad">16</td>
+            <td data-th="Unidades">Unidad</td>
+            <td data-th="Marca">Roca</td>
+            <td data-th="Descripción">Llave Monotubo 1/2'' NTM</td>
+            <td data-th="Referencia">5a4d6we54</td>
+            <td data-th="Ud caja">1</td>
+            <td data-th="Provedor">Roca</td>
+            <td data-th="Precio Ud">16.90</td>
+            <td data-th="Precio Total">270.40</td>
+            <td data-th="Acción" class="text-center">
+            	<a href="#" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
+            	<a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
+        </tr>
+        <tr>
+            <td data-th="Fecha">13/11/2017</td>
+            <td data-th="Cantidad">2</td>
+            <td data-th="Unidades">Unidad</td>
+            <td data-th="Marca">Irsap</td>
+            <td data-th="Descripción">Valvula onotubo blanco Escuadra de 35mm de separación entre ejes</td>
+            <td data-th="Referencia">813d1201</td>
+            <td data-th="Ud caja">1</td>
+            <td data-th="Provedor">Irsap</td>
+            <td data-th="Precio Ud">65.00</td>
+            <td data-th="Precio Total">130.00</td>
+            <td data-th="Acción" class="text-center">
+            	<a href="#" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
+            	<a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+	<div class="row col-md-5">
+		<h3 class="text-center">Productos para añadir</h3>
+		<div class="col-md-12 left">
+			<div>
+				<div class="col-md-9">
+					<p>Valvula onotubo blanco Escuadra de 35mm de separación entre ejes </p>
+				</div>
+				<div class="col-md-3">
+					<a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-arrow-right"></span></a>
+					<a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+				</div>
+				<br>
+			</div>
+			<div>
+				<div class="col-md-9">
+					<p>Llave Monotubo 1/2'' NTM</p>
+				</div>
+				<div class="col-md-3">
+					<a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-arrow-right"></span></a>
+					<a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+
+	<div class="row col-md-2 text-center center">
+		<button class="btn-lg btn-primary glyphicon glyphicon-circle-arrow-right"></button>
+	</div>
+
+	<div class="row col-md-5">
+		<h3 class="text-center">Obra</h3>
+		<div class="col-md-12 right">
+			<div class="col-md-8">
+				<div class="dropdown">
+	  				<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Selecciona la obra
+	  				<span class="caret"></span></button>
+	  				<ul class="dropdown-menu">
+					    <li><a href="#">Obra Pedro Picapiedra</a></li>
+					    <li><a href="#">Batman</a></li>
+					    <li><a href="#">Darth Vader</a></li>
+	  				</ul>
+				</div>
+				<h4> Obra seleccionada</h4>
+			</div>
+			<div class="col-md-4">
+				<button type="button" class="btn-success btn-xlarge">Confirmar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="vendor/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="vendor/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

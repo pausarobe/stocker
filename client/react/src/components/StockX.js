@@ -91,9 +91,25 @@ class StockX extends Component {
 					<p>Valvula onotubo blanco Escuadra de 35mm de separación entre ejes </p>
 				</div>
 				<div className="col-md-3">
-					<a href="#" className="btn btn-info btn-xs"><span className="glyphicon glyphicon-arrow-right"></span></a>
+                <div>
+                    <div className="contador">
+                    <div className="input-group">
+                        <span className="input-group-btn">
+                            <button type="button" className="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                <span className="glyphicon glyphicon-minus"></span>
+                            </button>
+                        </span>
+                        <input type="text" name="quant[1]" className="form-control input-number" value="1" min="1" max="10"/>
+                        <span className="input-group-btn">
+                            <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                <span className="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+                    </div>
 					<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
 				</div>
+                </div>
 				<br/>
 			</div>
 			<div>
@@ -101,7 +117,6 @@ class StockX extends Component {
 					<p>Llave Monotubo 1/2'' NTM</p>
 				</div>
 				<div className="col-md-3">
-					<a href="#" className="btn btn-info btn-xs"><span className="glyphicon glyphicon-arrow-right"></span></a>
 					<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
 				</div>
 				<br/>
