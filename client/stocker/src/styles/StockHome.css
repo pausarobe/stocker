@@ -1,0 +1,29 @@
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.5em);
+}
+
+.button {
+  width: 180px;
+  height: 180px;
+  color: #ffffff;
+  background-color: #01B0AE;
+  font-family: Helvetica;
+  text-decoration: none;
+  font-size: 1.4em;
+  border: 2px #ffffff solid;
+  margin: 5px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (max-width: 480px) {
+    .button {
+        font-size: 1em;
+        margin: 1px;
+        width: 150px;
+        height: 150px
+    }
+}

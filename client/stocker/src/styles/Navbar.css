@@ -1,0 +1,27 @@
+.navbar-brand {
+    padding: 0px;
+}
+
+.navbar-brand>img {
+    height: 100%;
+    padding: 7px 15px;
+    width: auto;
+}
+
+.navbar-brand {
+    height: 80px;
+}
+
+.nav >li >a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.nav >li >a:hover {
+    color: #01B0AE !important;
+}
+
+.navbar-toggle {
+    padding: 10px;
+    margin: 25px 15px 25px 0;
+}
