@@ -1,0 +1,53 @@
+[
+{
+    "id": 1,
+    "categoria": "Calefacción",
+    "unidad": "Unidad",
+    "marca": "Roca",
+    "descripcion": "Elemento radiador de Aluminio modelo 70",
+    "refProvedor": "15de521qq",
+    "cajas": 1,
+    "provedor": "Roca",
+    "precio": 16.95,
+    "stock": 10,
+    "fecha": "2018-01-21T23:32:18Z"
+},
+{
+    "id": 2,
+    "categoria": "Calefacción",
+    "unidad": "Unidad",
+    "marca": "Irsap",
+    "descripcion": "Valvula onotubo blanco Escuadra de 35mm de separación entre ejes",
+    "refProvedor": "813d1201",
+    "cajas": 1,
+    "provedor": "Irsap",
+    "precio": 65.00,
+    "stock": 50,
+    "fecha": "2018-01-21T23:32:18Z"
+},
+{
+    "id": 3,
+    "categoria": "Calefacción",
+    "unidad": "Unidad",
+    "marca": "Roca",
+    "descripcion": "Llave Monotubo 1/2'' NTM",
+    "refProvedor": "5a4d6we54",
+    "cajas": 1,
+    "provedor": "Roca",
+    "precio": 16.90,
+    "stock": 75,
+    "fecha": "2018-01-21T23:32:18Z"
+},
+{
+    "id": 4,
+    "categoria": "Baño",
+    "unidad": "Unidad",
+    "marca": "Roca",
+    "descripcion": "Sanitario",
+    "refProvedor": "5a4d6we56",
+    "cajas": 1,
+    "provedor": "Roca",
+    "precio": 36.90,
+    "stock": 10,
+    "fecha": "2018-01-21T23:32:18Z"
+}]

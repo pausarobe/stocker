@@ -1,0 +1,39 @@
+[
+{
+    "id": 1,
+    "nombre": "Pedro Picapiedra",
+    "fecha": "2018-01-21T23:32:18Z",
+    "direccion": "Av. Piedradura 3",
+    "productos": [
+    {
+        "id": 1,
+        "cantidad": 3
+    },
+    {
+        "id": 2,
+        "cantidad": 5
+    },
+    {
+        "id": 3,
+        "cantidad": 1
+    }]
+},
+{
+    "id": 2,
+    "nombre": "Batman",
+    "fecha": "2018-01-21T23:32:18Z",
+    "direccion": "Av. Cueva Oscura, 13",
+    "productos": [
+    {
+        "id": 1,
+        "cantidad": 1
+    },
+    {
+        "id": 2,
+        "cantidad": 15
+    },
+    {
+        "id": 3,
+        "cantidad": 20
+    }]
+}]
