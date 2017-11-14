@@ -24,39 +24,51 @@
 
 [{
 	"idProd": "p1",
-	"fecha": "09/11/2017",
-	"cantidad": 1,
+	"categoria": "Calefacción", 
 	"ud": "Unidad",
 	"marca": "Roca",
 	"descripcion": "Elemento radiador de Aluminio modelo 70",
-	"ref": "15de521qq",
+	"refProvedor": "15de521qq",
 	"udCaja": 1,
 	"provedor": "Roca",
-	"precioUd": 16.95,
-	"precioTotal": 16.95,
-	"accion": {
-		"add": false,
-		"delete": false
-	}
+	"precioUd": 16.95
 },
 {
 	"idProd": "p2",
-	"fecha": "13/11/2017",
-	"cantidad": 2,
+	"categoria": "Calefacción",
 	"ud": "Unidad",
 	"marca": "Irsap",
 	"descripcion": "Valvula onotubo blanco Escuadra de 35mm de separación entre ejes",
-	"ref": "813d1201",
+	"refProvedor": "813d1201",
 	"udCaja": 1,
 	"provedor": "Irsap",
 	"precioUd": 65.00,
-	"precioTotal": 130.00,
+},
+{
+	"idProd": "p5",
+	"categoria": "Calefacción",
+	"ud": "Unidad",
+	"marca": "Roca",
+	"descripcion": "Llave Monotubo 1/2'' NTM",
+	"refProvedor": "5a4d6we54",
+	"udCaja": 1,
+	"provedor": "Roca",
+	"precioUd": 16.90,
+}]
+
+// json de stock:
+
+[{
+	"idStock": "s1",
+	"idProd": "p1",
+	"fechaEntrada": "14/11/2017",
+	"cantidad": 1,
 	"accion": {
 		"add": false,
+		"edit": false,
 		"delete": false
 	}
 }]
-
 
 // json de obra:
 
@@ -69,5 +81,8 @@
 		"done": false,
 		"delete": false
 	},
-	"productos": ["p1", "p2"]
+	"productos": {
+		"p1": 2,
+		"p5": 1
+	}
 }]

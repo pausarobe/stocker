@@ -15,7 +15,6 @@ class Main extends Component {
 				<Route path="/stock" component={StockX}/>
 				<Route path="/obras" component={ObrasHome}/>
 			</Switch>
-			<Test/>
 		</div>
 		</BrowserRouter>)
 	}

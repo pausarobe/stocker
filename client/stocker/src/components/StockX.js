@@ -12,7 +12,6 @@ class StockX extends Component {
 	<div className="container">
 	<h1> STOCK CALEFACCIÓN (stock.name[0])</h1>
 	<button type="button" className="btn btn-default">Nuevo producto</button>
-
     <table className="rwd-table table-striped table-hover">
     <thead>
         <tr>
@@ -29,7 +28,7 @@ class StockX extends Component {
             <th>Acciones</th>
         </tr>
     </thead>
-        <tr>
+        <tbody><tr>
             <td data-th="Fecha">13/11/2017</td>
             <td data-th="Cantidad">1</td>
             <td data-th="Unidades">Unidad</td>
@@ -42,6 +41,7 @@ class StockX extends Component {
             <td data-th="Precio Total">16.95</td>
             <td data-th="Acción" className="text-center">
             	<a href="#" className="btn btn-success btn-xs"><span className="glyphicon glyphicon-plus"></span></a>
+                <a href="#" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil"></span></a>
             	<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
@@ -58,6 +58,7 @@ class StockX extends Component {
             <td data-th="Precio Total">270.40</td>
             <td data-th="Acción" className="text-center">
             	<a href="#" className="btn btn-success btn-xs"><span className="glyphicon glyphicon-plus"></span></a>
+                <a href="#" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil"></span></a>
             	<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
@@ -74,10 +75,11 @@ class StockX extends Component {
             <td data-th="Precio Total">130.00</td>
             <td data-th="Acción" className="text-center">
             	<a href="#" className="btn btn-success btn-xs"><span className="glyphicon glyphicon-plus"></span></a>
+                <a href="#" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil"></span></a>
             	<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
-    </table>
+    </tbody></table>
 </div>
 
 <div className="container">

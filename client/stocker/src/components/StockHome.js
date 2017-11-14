@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import Navbar from './Navbar'
 
@@ -9,7 +10,7 @@ class StockHome extends Component {
 		return (<div>
 			<Navbar/>
 			<div className="container">
-				<button className="button raise">Accesorios</button>
+				<Link to="/stock"><button className="button raise">Accesorios</button></Link>
 				<button className="button raise">Accesorios Baño</button>
 				<button className="button raise">Accesorios Cocina</button>
 				<button className="button raise">Calefacción</button>
