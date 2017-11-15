@@ -6,12 +6,12 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 const stockLogic = new(require('./logic/StockLogic'))
+const obrasLogic = new(require('./logic/ObrasLogic'))
 
 const router = express.Router()
 
 router.route('/stocks/categories')
     .get((req, res) => {
-        //lista los tipo de stock
 
         stockLogic.listCategories()
             .then(categories => res.json({
@@ -23,9 +23,56 @@ router.route('/stocks/categories')
                 status: 'KO',
                 message: err.message
             }))
-
     })
 
+router.route('/stocks/:categoria')
+    .get((req, res) => {
+        const {categoria} = req.params
+
+        stockLogic.category(categoria)
+            .then(category => res.json({
+                status: 'OK',
+                message: `Category ${category} listed successfully`,
+                data: category
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+
+router.route('/obras')
+    .get((req, res) => {
+
+        obrasLogic.listObras()
+            .then(obras => res.json({
+                status: 'OK',
+                message: 'Obras listed successfully',
+                data: obras
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+
+router.route('/obras/:nombre')
+    .get((req, res) => {
+        const {nombre} = req.params
+
+        obrasLogic.name(nombre)
+            .then(name => res.json({
+                status: 'OK',
+                message: `Obra de ${name} listed successfully`,
+                data: name
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+
+app.use('/api', router)
 
 // router.route('stocks/:category')
 //     .get((req, res) => {
@@ -65,8 +112,6 @@ router.route('/stocks/categories')
 //         //lista una obra en concreto
 //         const id = req.params.id
 //     })
-
-app.use('/api', router)
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise

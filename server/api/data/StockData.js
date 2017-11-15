@@ -8,6 +8,17 @@ class StockData {
 	listCategories() {
 		return Stock.find().distinct('categoria').exec()
 	}
+
+	category(categoria) {
+		return new Promise((resolve, reject) => {
+			if (!categoria)
+				throw new Error('categoria no especificada')
+
+			Stock.find({categoria})
+				.then(resolve)
+				.catch(reject)
+		})
+	}
 }
 
 module.exports = StockData

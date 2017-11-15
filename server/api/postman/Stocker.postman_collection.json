@@ -1,0 +1,101 @@
+{
+	"info": {
+		"name": "Stocker",
+		"_postman_id": "358b9f8a-c4e7-93a9-d7e2-6733775dbdcf",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/api/stocks/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"stocks",
+						"categories"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List obras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/api/obras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"obras"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List categoria especifica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/api/stocks/Accesorios Cocina",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"stocks",
+						"Accesorios Cocina"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List obras by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/api/obras/Batman",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"obras",
+						"Batman"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
