@@ -36,4 +36,24 @@
         "id": 30,
         "cantidad": 20
     }]
-}]
+},
+{
+    "id": 3,
+    "nombre": "Darth Vader",
+    "fecha": "2018-01-21T23:32:18Z",
+    "direccion": "Estrella de la muerte, 2º intento",
+    "productos": [
+    {
+        "id": 11,
+        "cantidad": 1
+    },
+    {
+        "id": 39,
+        "cantidad": 0
+    },
+    {
+        "id": 22,
+        "cantidad": 20
+    }]
+}
+]
