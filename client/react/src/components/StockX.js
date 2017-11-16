@@ -1,16 +1,37 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Navbar from './Navbar'
+import Api from '../api/Api'
 
+import Navbar from './Navbar'
 import '../styles/StockX.css'
 
 class StockX extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            products: []
+        }
+    }
+
+    componentWillMount() {
+        Api.showCategory(this.props.match.params.category)
+            .then(products => {
+                console.log(products)
+                this.setState({products})
+            })
+            .catch(function (err) {
+                console.error (err)
+            })
+    }
+
 	render() {
+        console.log(this.props.match.params.category)
 		return(<div>
     <Navbar/>
 	<div className="container">
-	<h1> STOCK CALEFACCIÓN (stock.name[0])</h1>
+	<h1> Stock de <span className="title">{this.props.match.params.category.toUpperCase()}</span></h1>
 	<button type="button" className="btn btn-default">Nuevo producto</button>
     <table className="rwd-table table-striped table-hover">
     <thead>
@@ -20,66 +41,37 @@ class StockX extends Component {
             <th>Unidades</th>
             <th>Marca</th>
             <th>Descripción</th>
-            <th>Referencia</th>
+            <th>Ref</th>
             <th>Ud caja</th>
-            <th>Provedor</th>
+            <th>Proveedor</th>
             <th>Precio Ud</th>
             <th>Precio Total</th>
             <th>Acciones</th>
         </tr>
     </thead>
-        <tbody><tr>
-            <td data-th="Fecha">13/11/2017</td>
-            <td data-th="Cantidad">1</td>
-            <td data-th="Unidades">Unidad</td>
-            <td data-th="Marca">Roca</td>
-            <td data-th="Descripción">Elemento radiador de Aluminio modelo Dubal 70</td>
-            <td data-th="Referencia">15de521qq</td>
-            <td data-th="Ud caja">1</td>
-            <td data-th="Provedor">Roca</td>
-            <td data-th="Precio Ud">16.95</td>
-            <td data-th="Precio Total">16.95</td>
-            <td data-th="Acción" className="text-center">
-            	<a href="#" className="btn btn-success btn-xs"><span className="glyphicon glyphicon-plus"></span></a>
-                <a href="#" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil"></span></a>
-            	<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td data-th="Fecha">13/11/2017</td>
-            <td data-th="Cantidad">16</td>
-            <td data-th="Unidades">Unidad</td>
-            <td data-th="Marca">Roca</td>
-            <td data-th="Descripción">Llave Monotubo 1/2'' NTM</td>
-            <td data-th="Referencia">5a4d6we54</td>
-            <td data-th="Ud caja">1</td>
-            <td data-th="Provedor">Roca</td>
-            <td data-th="Precio Ud">16.90</td>
-            <td data-th="Precio Total">270.40</td>
-            <td data-th="Acción" className="text-center">
-            	<a href="#" className="btn btn-success btn-xs"><span className="glyphicon glyphicon-plus"></span></a>
-                <a href="#" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil"></span></a>
-            	<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td data-th="Fecha">13/11/2017</td>
-            <td data-th="Cantidad">2</td>
-            <td data-th="Unidades">Unidad</td>
-            <td data-th="Marca">Irsap</td>
-            <td data-th="Descripción">Valvula onotubo blanco Escuadra de 35mm de separación entre ejes</td>
-            <td data-th="Referencia">813d1201</td>
-            <td data-th="Ud caja">1</td>
-            <td data-th="Provedor">Irsap</td>
-            <td data-th="Precio Ud">65.00</td>
-            <td data-th="Precio Total">130.00</td>
-            <td data-th="Acción" className="text-center">
-            	<a href="#" className="btn btn-success btn-xs"><span className="glyphicon glyphicon-plus"></span></a>
-                <a href="#" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil"></span></a>
-            	<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
-            </td>
-        </tr>
-    </tbody></table>
+        <tbody>
+            {
+                this.state.products.map((product) => {
+                    return (<tr>
+                        <td data-th="Fecha">{product.fecha}</td>
+                        <td data-th="Cantidad">{product.stock}</td>
+                        <td data-th="Unidades">{product.unidad}</td>
+                        <td data-th="Marca">{product.marca}</td>
+                        <td data-th="Descripción">{product.descripcion}</td>
+                        <td data-th="Ref">{product.refProveedor}</td>
+                        <td data-th="Ud caja">{product.cajas}</td>
+                        <td data-th="Proveedor">{product.proveedor}</td>
+                        <td data-th="Precio Ud">{product.precio}</td>
+                        <td data-th="Precio Total">{(product.precio * product.stock).toFixed(2)}</td>
+                        <td data-th="Acción" className="text-center">
+                            <a href="#" className="btn btn-success btn-xs but"><span className="glyphicon glyphicon-plus"></span></a>
+                            <a href="#" className="btn btn-primary btn-xs but"><span className="glyphicon glyphicon-pencil"></span></a>
+                            <a href="#" className="btn btn-danger btn-xs but"><span className="glyphicon glyphicon-remove"></span></a>
+                        </td>                        
+                    </tr>)
+                })
+            }
+        </tbody></table>
 </div>
 
 <div className="container">
@@ -138,3 +130,6 @@ class StockX extends Component {
 }
 
 export default StockX
+
+
+

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../styles/Navbar.css'
 import logo from '../img/danma-logo.png'
 
+import { Link } from 'react-router-dom'
+
 class Navbar extends Component {
 	render() {
 		return (<nav className="navbar navbar-default navbar-static-top">
@@ -18,9 +20,9 @@ class Navbar extends Component {
 		</div>
 		<div className="navbar-collapse collapse">
 			<ul className="nav navbar-nav navbar-right">
-				<li><a href="http://localhost:3000/">STOCK</a></li>
-				<li><a href="http://localhost:3000/obras">OBRAS</a></li>
-				<li><a href="#">CONTROL</a></li>
+				<li><Link to={"/"}>STOCK</Link></li>
+				<li><Link to={"/obras"}>OBRAS</Link></li>
+				<li><Link to={"/"}>CONTROL</Link></li>
 			</ul>
 		</div>
 	</div>

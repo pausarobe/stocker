@@ -15,6 +15,11 @@ class ObrasData {
 				.catch(reject)
 		})
 	}
+
+	createObra(id, nombre, fecha, direccion, done, productos) {
+		const obra =  new Obras(id, nombre, fecha, direccion, done, productos)
+		return obra.save()
+	}
 }
 
 module.exports = ObrasData

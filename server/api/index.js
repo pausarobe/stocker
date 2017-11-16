@@ -43,6 +43,20 @@ router.route('/stocks/:categoria')
                 message: err.message
             }))
     })
+    .post((req, res) => {
+        const {id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha} = req.body
+
+        stockLogic.createProduct({id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha})
+            .then(product => res.json({
+                status: 'OK',
+                message: 'New product created successfully',
+                data: product
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
 
 router.route('/obras')
     .get((req, res) => {
@@ -58,6 +72,21 @@ router.route('/obras')
                 message: err.message
             }))
     })
+    .post((req, res) => {
+        const {id, nombre, fecha, direccion, done, productos} = req.body
+
+        obrasLogic.createObra({id, nombre, fecha, direccion, done, productos})
+            .then(newObra => res.json({
+                status: 'OK',
+                message: 'New obra created successfully',
+                data: newObra
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+
 
 router.route('/obras/:nombre')
     .get((req, res) => {
@@ -76,45 +105,6 @@ router.route('/obras/:nombre')
     })
 
 app.use('/api', router)
-
-// router.route('stocks/:category')
-//     .get((req, res) => {
-//         //lista un stock concreto
-//         const stock = req.params.stock
-
-
-//     })
-//     .post((req, res) => {
-//         //crear nuevo producto del stock concreto
-//     })
-//     .put((req, res) => {
-//         //edita un producto en concreto
-//     })
-//     .delete((req, res) => {
-//         //elimina un producto en concreto
-//     })
-
-// router.route('/obras')
-//     .get((req, res) => {
-//         //lista todas las obras
-//         res.json({
-//             status: 'OK',
-//             messsage: 'Obras listed successfully'
-//             //data: obrasData.list()
-//         })
-//     })
-//     .post((req, res) => {
-//         //crear una obra nueva
-//     })
-//     .delete((req, res) => {
-//         //elimina una obra 
-//     })
-
-// router.route('/obras/:id')
-//     .get((req, res) => {
-//         //lista una obra en concreto
-//         const id = req.params.id
-//     })
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise

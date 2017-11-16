@@ -84,3 +84,7 @@ h1, h3 {
 .rwd-table th, .rwd-table td:before {
   color: #605e79;
 }
+
+.but {
+  margin: 2px;
+}

@@ -5,12 +5,12 @@
     "unidad": "Unidad",
     "marca": "Accesorios Puertas",
     "descripcion": "Tope magnético para puertas de color Beige",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 2.95,
     "stock": 14,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 2,
@@ -18,12 +18,12 @@
     "unidad": "Unidad",
     "marca": "Gedy",
     "descripcion": "Percha para radiador toallero cromo 2025 merlino",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 10.50,
     "stock": 17,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 3,
@@ -31,12 +31,12 @@
     "unidad": "Unidad",
     "marca": "Gedy",
     "descripcion": "Contenedor de gel de varillas de rincon 2483",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 22.50,
     "stock": 8,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 4,
@@ -44,12 +44,12 @@
     "unidad": "Unidad",
     "marca": "Salgar",
     "descripcion": "Barra de 50cm de la serie Sil",
-    "refProvedor": "12792",
+    "refProveedor": "12792",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 23.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 5,
@@ -57,12 +57,12 @@
     "unidad": "Unidad",
     "marca": "Salgar",
     "descripcion": "Portarollos vertical de la serie Sil",
-    "refProvedor": "12800",
+    "refProveedor": "12800",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 23.00,
     "stock": 0,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 6,
@@ -70,12 +70,12 @@
     "unidad": "Unidad",
     "marca": "Salgar",
     "descripcion": "Percha de la serie Sil",
-    "refProvedor": "12801",
+    "refProveedor": "12801",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 11.00,
     "stock": 2,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 7,
@@ -83,12 +83,12 @@
     "unidad": "Unidad",
     "marca": "Salgar",
     "descripcion": "Barra de 30cm de la serie Nervión",
-    "refProvedor": "12771",
+    "refProveedor": "12771",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 25.00,
     "stock": 0,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 8,
@@ -96,12 +96,12 @@
     "unidad": "Unidad",
     "marca": "Salgar",
     "descripcion": "Portarollos de la serie Nervión",
-    "refProvedor": "12839",
+    "refProveedor": "12839",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 22.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 9,
@@ -109,12 +109,12 @@
     "unidad": "Unidad",
     "marca": "Bath+",
     "descripcion": "Portarollos sin tapa derecho adhesivo duo 264 01 56",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 23.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 10,
@@ -122,12 +122,12 @@
     "unidad": "Unidad",
     "marca": "Mz Rio",
     "descripcion": "Válvula desagüe para lavabo 1'' 1/4 universal tipo Click - Clack en cromo",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 20.00,
     "stock": 3,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 11,
@@ -135,12 +135,12 @@
     "unidad": "Unidad",
     "marca": "Mz Rio",
     "descripcion": "Ducha 5 posiciones Activa-5",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 19.20,
     "stock": 2,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 12,
@@ -148,12 +148,12 @@
     "unidad": "Unidad",
     "marca": "SyP",
     "descripcion": "Extractor de baño modelo Silent 100 CZ",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 75.00,
     "stock": 5,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 13,
@@ -161,12 +161,12 @@
     "unidad": "Unidad",
     "marca": "Patas y tiradores",
     "descripcion": "Patas SC de 25mm de altura",
-    "refProvedor": "25.120.04",
+    "refProveedor": "25.120.04",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 12.50,
     "stock": 6,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 14,
@@ -174,12 +174,12 @@
     "unidad": "Unidad",
     "marca": "Sifon-latón",
     "descripcion": "Sifon-latón cromado",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 24.90,
     "stock": 0,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 15,
@@ -187,12 +187,12 @@
     "unidad": "Unidad",
     "marca": "i.coben",
     "descripcion": "Cubo altura 23cm gris antracita",
-    "refProvedor": "0412620",
+    "refProveedor": "0412620",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 20.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 16,
@@ -200,12 +200,12 @@
     "unidad": "Unidad",
     "marca": "i.coben",
     "descripcion": "Cubo altura 23cm verde",
-    "refProvedor": "0412520",
+    "refProveedor": "0412520",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 20.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 17,
@@ -213,12 +213,12 @@
     "unidad": "Unidad",
     "marca": "-",
     "descripcion": "Escurreplatos de 45cm de ancho",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 49.50,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 18,
@@ -226,12 +226,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Elemento radiador de Aluminio modelo Dubal 70",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 16.95,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 19,
@@ -239,12 +239,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Elemento radiador de Aluminio modelo Dubal 60",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 13.75,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 20,
@@ -252,12 +252,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Llave Monotubo 1/2'' NTM",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 16.90,
     "stock": 16,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 21,
@@ -265,12 +265,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Adaptador para tubo multicapade 18mm",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 2.85,
     "stock": 28,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 21,
@@ -278,12 +278,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Purgador de aire automatico",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 2.85,
     "stock": 8,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 22,
@@ -291,12 +291,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Cabezal termostático líquido NTL",
-    "refProvedor": "193105000",
+    "refProveedor": "193105000",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 12.00,
     "stock": 11,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 23,
@@ -304,12 +304,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Junta de 1'' para manguitos radiador de aluminio",
-    "refProvedor": "194003005",
+    "refProveedor": "194003005",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.10,
     "stock": 2,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 24,
@@ -317,12 +317,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Junta de silicona 1'' para tapón radiador de aluminio",
-    "refProvedor": "7224131",
+    "refProveedor": "7224131",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.20,
     "stock": 19,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 25,
@@ -330,12 +330,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Reducción purgador derecha 1'' x 1/8'' pintado en blanco para radiador de aluminio",
-    "refProvedor": "7220151",
+    "refProveedor": "7220151",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.75,
     "stock": 2,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 26,
@@ -343,12 +343,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Reducción purgador izquierda 1'' x 1/8'' pintado en blanco para radiador de aluminio",
-    "refProvedor": "7220156",
+    "refProveedor": "7220156",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.75,
     "stock": 6,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 27,
@@ -356,12 +356,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Reducción llave derecha 1'' x 1/2'' pintado en blanco para radiador de aluminio",
-    "refProvedor": "7220154",
+    "refProveedor": "7220154",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.75,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 28,
@@ -369,12 +369,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Reducción llave izquierda 1'' x 1/2'' pintado en blanco para radiador de aluminio",
-    "refProvedor": "7220158",
+    "refProveedor": "7220158",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.75,
     "stock": 5,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 29,
@@ -382,12 +382,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Tapón derecha 1'' pintado en blanco para radiador de aluminio",
-    "refProvedor": "7220149",
+    "refProveedor": "7220149",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.75,
     "stock": 12,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 30,
@@ -395,12 +395,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Tapón izquierda 1'' pintado en blanco para radiador de aluminio",
-    "refProvedor": "72201450",
+    "refProveedor": "72201450",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 0.75,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 31,
@@ -408,12 +408,12 @@
     "unidad": "Unidad",
     "marca": "Cicsa",
     "descripcion": "Kit cobre tubo blanco Ral 9010 para sistema monotubo de 16mm de diámetro y separación entre ejes de 38mm",
-    "refProvedor": "0493E",
+    "refProveedor": "0493E",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 47.00,
     "stock": 3,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 32,
@@ -421,12 +421,12 @@
     "unidad": "m2",
     "marca": "Saloni",
     "descripcion": "Cerámica Agora Blanco en formato 30 x 90 cm",
-    "refProvedor": "DKA500",
+    "refProveedor": "DKA500",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 34.30,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 33,
@@ -434,12 +434,12 @@
     "unidad": "m2",
     "marca": "Saloni",
     "descripcion": "Cerámica Agora Blanco en formato 30 x 90 cm",
-    "refProvedor": "DKA500",
+    "refProveedor": "DKA500",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 34.30,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 34,
@@ -447,12 +447,12 @@
     "unidad": "m2",
     "marca": "Saloni",
     "descripcion": "Cerámica Made Marfil en formato 14.8 x 90 cm",
-    "refProvedor": "XP5670",
+    "refProveedor": "XP5670",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 25.91,
     "stock": 0.75,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 35,
@@ -460,12 +460,12 @@
     "unidad": "m2",
     "marca": "Porcelanosa",
     "descripcion": "Cerámica Menorca Blanco en formato 31.6 x 90 cm",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 43.99,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 36,
@@ -473,12 +473,12 @@
     "unidad": "Unidad",
     "marca": "Teka",
     "descripcion": "Fregadero TK modelo Stylo 1C en inox",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 42.50,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 37,
@@ -486,12 +486,12 @@
     "unidad": "Unidad",
     "marca": "Tres",
     "descripcion": "Monomando de Lavabo modelo BM-Tres",
-    "refProvedor": "1.39.102",
+    "refProveedor": "1.39.102",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 55.15,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 38,
@@ -499,12 +499,12 @@
     "unidad": "Unidad",
     "marca": "Aplique Espejo",
     "descripcion": "Aplique Led Eco.house para espejo modelo ilu 2 de 49.5cm y acabado en cromo",
-    "refProvedor": "EC619C",
+    "refProveedor": "EC619C",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 64.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 39,
@@ -512,12 +512,12 @@
     "unidad": "Unidad",
     "marca": "Aplique Espejo",
     "descripcion": "Aplique Led Eco.house para espejo modelo ilu 2 de 80cm y acabado en cromo",
-    "refProvedor": "EC620C",
+    "refProveedor": "EC620C",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 129.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 40,
@@ -525,12 +525,12 @@
     "unidad": "Unidad",
     "marca": "Expormim",
     "descripcion": "Silla Mistral A0080 tinte 07 roble natural tapizado",
-    "refProvedor": "A0080",
+    "refProveedor": "A0080",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 149.00,
     "stock": 4,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 41,
@@ -538,12 +538,12 @@
     "unidad": "Unidad",
     "marca": "Eco.house",
     "descripcion": "Espejo Luna Plata basic de 100 x 60 cm",
-    "refProvedor": "EC039",
+    "refProveedor": "EC039",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 58.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 42,
@@ -551,12 +551,12 @@
     "unidad": "Unidad",
     "marca": "Pymac",
     "descripcion": "Puerta para lavadora/lavavajillas blanco supermate con tirador gola blanco brillo integrado en la puerta",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 84.50,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 43,
@@ -564,12 +564,12 @@
     "unidad": "Unidad",
     "marca": "Pymac",
     "descripcion": "Alto 1 puerta bisagras derecha Ebro bali veta en vertical con tirador gola blanco brillo integrado en la puerta (dimensiones 600mm ancho x 490mm alto x 580 + 19mm fondo)",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 246.50,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 44,
@@ -577,12 +577,12 @@
     "unidad": "Unidad",
     "marca": "Valentine",
     "descripcion": "12 litros color Beige Siam calidad Valon mate",
-    "refProvedor": "E266",
+    "refProveedor": "E266",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 67.30,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 45,
@@ -590,12 +590,12 @@
     "unidad": "Unidad",
     "marca": "Verrochio",
     "descripcion": "Kit de reparación resina + catalizador + diluyente para plato rojo 3001",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 15.00,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 46,
@@ -603,12 +603,12 @@
     "unidad": "Unidad",
     "marca": "Roca",
     "descripcion": "Placa de accionamiento modelo PL1 Dual Lacada Gris",
-    "refProvedor": "A890095002",
+    "refProveedor": "A890095002",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 46.30,
     "stock": 1,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 47,
@@ -616,12 +616,12 @@
     "unidad": "m2",
     "marca": "Berryalloc",
     "descripcion": "Ellegance Roble Pecan AC4 en formato 2033 x 241 x 9mm",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 23.65,
     "stock": 1.5,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 48,
@@ -629,12 +629,12 @@
     "unidad": "m2",
     "marca": "Berryalloc",
     "descripcion": "Ellegance Sabana Pecan AC4 en formato 2033 x 241 x 9mm",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 23.65,
     "stock": 4,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 },
 {
     "id": 49,
@@ -642,11 +642,11 @@
     "unidad": "m2",
     "marca": "Egger",
     "descripcion": "Soporte para suelo laminado de 2mm de espesor",
-    "refProvedor": "-",
+    "refProveedor": "-",
     "cajas": 0,
-    "provedor": "-",
+    "proveedor": "-",
     "precio": 2.54,
     "stock": 12,
-    "fecha": "2018-01-21T23:32:18Z"
+    "fecha": "2018-01-21"
 }
 ]

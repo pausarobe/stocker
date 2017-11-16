@@ -64,6 +64,15 @@ h1, h3 {
   color: #01B0AE;
 }
 
+.title {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.but {
+  margin: 2px;
+}
+
 .rwd-table {
  /* background: #9dbda8;*/
   color: black;

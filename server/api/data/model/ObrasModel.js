@@ -6,6 +6,7 @@ const ObrasSchema = new Schema({
 	nombre: String,
 	fecha: Date,
 	direccion: String,
+	done: Boolean,
 	productos: [{
 		id: Number,
 		cantidad: Number

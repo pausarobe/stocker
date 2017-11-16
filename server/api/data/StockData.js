@@ -19,6 +19,12 @@ class StockData {
 				.catch(reject)
 		})
 	}
+
+	createProduct(id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha) {
+		const product = new Stock(id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha)
+
+		return product.save()
+	}
 }
 
 module.exports = StockData
