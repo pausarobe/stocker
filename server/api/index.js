@@ -13,7 +13,7 @@ const obrasLogic = new(require('./logic/ObrasLogic'))
 
 const router = express.Router()
 
-router.route('/stocks/categories')
+router.route('/stocks')
     .get((req, res) => {
 
         stockLogic.listCategories()
@@ -80,6 +80,36 @@ router.route('/obras')
                 status: 'OK',
                 message: 'New obra created successfully',
                 data: newObra
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+
+router.route('/obras/:_id')
+    .patch((req, res) => {
+        const {_id} = req.params
+
+        obrasLogic.done({_id})
+            .then(done => res.json({
+                status: 'OK',
+                message: 'Done successfully',
+                data: done
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+    .delete((req, res) => {
+        const {_id} = req.params
+
+        obrasLogic.deleteObra({_id})
+            .then(obra => res.json({
+                status: 'OK',
+                message: 'Obra deleted successfully',
+                data: obra
             }))
             .catch(err => res.json({
                 status: 'KO',

@@ -5,7 +5,7 @@ const Api = {
 	url: 'http://localhost:3002/api',
 
 	listByCategories: function () {
-		return axios.get(this.url + '/stocks/categories')
+		return axios.get(this.url + '/stocks')
 			.then(res => res.data.data)
 	},
 
@@ -18,7 +18,28 @@ const Api = {
 	listObras: function () {
 		return axios.get(this.url + '/obras')
 			.then(res => res.data.data)
+	},
+
+	deleteObra: function (_id) {
+		return axios.delete(this.url + '/obras/' + _id)
+			.then(res => res.data.data)
+	},
+
+	done: function (_id) {
+		return axios.patch(this.url + '/obras/' + _id)
+			.then(res => res.data.data)
 	}
+
+
+	// createObra: function () {
+	// 	return axios.post(this.url + '/obras')
+	// 		.then(res => res.data.data) // ??
+	// }
+
+	// createProduct: function () {
+	// 	return axios.post(this.url + '/stocks/' + categoria)
+	// 		.then(res => res.data.data) // ??
+	// }
 
 }
 

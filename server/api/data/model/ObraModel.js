@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const ObrasSchema = new Schema({
+const ObraSchema = new Schema({
 	id: Number,
 	nombre: String,
 	fecha: Date,
@@ -13,4 +13,4 @@ const ObrasSchema = new Schema({
 	}]
 })
 
-module.exports = mongoose.model('Obras', ObrasSchema)
+module.exports = mongoose.model('Obra', ObraSchema)
