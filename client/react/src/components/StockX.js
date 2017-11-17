@@ -11,7 +11,7 @@ class StockX extends Component {
         super()
 
         this.state = {
-            products: []
+            products: [],
         }
     }
 
@@ -111,13 +111,15 @@ class StockX extends Component {
 	  				<button className="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Selecciona la obra
 	  				<span className="caret"></span></button>
 	  				<ul className="dropdown-menu">
-					    <li><a href="#">Obra Pedro Picapiedra</a></li>
-					    <li><a href="#">Batman</a></li>
-					    <li><a href="#">Darth Vader</a></li>
+    {/*                {
+                        this.state.obras.map(obra => {
+                            return (<li>{obra.nombre}</li>)
+                        })
+                    }*/}
 	  				</ul>
 				</div>
                 <p>Obra de:</p>
-				<h4> obra.nombre</h4>
+				<h4>Pedro Picapiedra</h4>
 			</div>
 			<div className="col-md-4">
 				<button type="button" className="btn-success btn-xlarge">Confirmar</button>
