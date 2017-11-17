@@ -23,3 +23,11 @@ $ mongoimport -d stocker -c obras --drop --jsonArray --file server/db/data/obras
 $ mongoimport -d stocker -c stocks --drop --jsonArray --file server/db/data/stocks.json 
 ```
 
+# export db a mlab
+
+```bash
+$ mongoimport -h ds111876.mlab.com:11876 -d stocker -c stocks -u user -p pass --drop --jsonArray --file data/stocks.json
+
+$ mongoimport -h ds111876.mlab.com:11876 -d stocker -c obras -u user -p pass --drop --jsonArray --file data/obras.json
+```
+
