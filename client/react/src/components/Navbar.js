@@ -15,7 +15,7 @@ class Navbar extends Component {
 				<span className="icon-bar"></span>
 				<span className="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="http://www.danma.es"><img src={logo} alt="Danma"/>
+			<a className="navbar-brand" href="http://www.danma.es"><img src={logo} alt="Danma"/>
 			</a>
 		</div>
 		<div className="navbar-collapse collapse">

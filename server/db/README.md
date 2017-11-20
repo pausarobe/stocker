@@ -18,12 +18,16 @@
 # import / export json data to / from db
 
 ```bash
-$ mongoimport -d stocker -c obras --drop --jsonArray --file server/db/data/obras.json
+$ mongoimport -d stocker -c obras --drop --jsonArray --file data/obras.json
 
-$ mongoimport -d stocker -c stocks --drop --jsonArray --file server/db/data/stocks.json 
+$ mongoimport -d stocker -c stocks --drop --jsonArray --file data/stocks.json 
+
+$ mongoexport -d stocker -c obras --jsonArray -o data/obras.json
+
+$ mongoexport -d stocker -c stocks --jsonArray -o data/stocks.json
 ```
 
-# export db a mlab
+# import json a mlab
 
 ```bash
 $ mongoimport -h ds111876.mlab.com:11876 -d stocker -c stocks -u user -p pass --drop --jsonArray --file data/stocks.json

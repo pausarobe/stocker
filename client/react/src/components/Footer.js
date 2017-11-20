@@ -5,7 +5,7 @@ import '../styles/Footer.css'
 class Footer extends Component {
 	render() {
 		return (<footer>
-        <p>© 2017 Pau Sarobé, All rights reserved.</p>
+        <p>© 2017 <span className="nom">Pau Sarobé</span>, All rights reserved.</p>
     </footer>)
 	}
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import StockX from './components/StockX'
 import StockHome from './components/StockHome'

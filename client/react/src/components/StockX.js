@@ -74,7 +74,7 @@ class StockX extends Component {
         </tbody></table>
 </div>
 
-<div className="container">
+<div className="container space">
 	<div className="row col-md-5">
 		<h3 className="text-center">Productos para añadir (prod.descripcion)</h3>
 		<div className="col-md-12 left">
