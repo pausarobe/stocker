@@ -4,6 +4,7 @@ import logo from '../img/danma-logo.png'
 
 import { Link } from 'react-router-dom'
 
+
 class Navbar extends Component {
 	render() {
 		return (<nav className="navbar navbar-default navbar-static-top">
@@ -15,8 +16,7 @@ class Navbar extends Component {
 				<span className="icon-bar"></span>
 				<span className="icon-bar"></span>
 			</button>
-			<a className="navbar-brand" href="http://www.danma.es"><img src={logo} alt="Danma"/>
-			</a>
+			<Link to={"/"}><img src={logo} alt="Danma"/></Link>
 		</div>
 		<div className="navbar-collapse collapse">
 			<ul className="nav navbar-nav navbar-right">

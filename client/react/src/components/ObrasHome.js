@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import Api from '../api/Api'
 
-import Navbar from './Navbar'
 import '../styles/ObrasHome.css'
 
 class ObrasHome extends Component {
@@ -12,11 +10,14 @@ class ObrasHome extends Component {
 
     this.state = {
       obras: [],
-      done: false
+      nombre: '',
+      fecha: '',
+      direccion: '',
+      done: '',
     }
   }
 
-  handleClick = (_id) => {
+  handleClickDone = (_id) => {
     console.log('done!')
     Api.done(_id)
       .then(() => Api.listObras()
@@ -30,10 +31,42 @@ class ObrasHome extends Component {
       .catch(err => {
         console.error(err)
       })
-  } 
+  }
+
+  handleClickNoDone = (_id) => {
+    console.log('no done!')
+    Api.noDone(_id)
+      .then(() => Api.listObras()
+        .then(obras => {
+          this.setState({obras})
+        })
+        .catch(err => {
+          console.error(err)
+        })
+      )
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  handleClickEdit = (_id, nombre, fecha, direccion) => {
+    console.log('Edit!')
+
+    Api.edit(_id, nombre, fecha, direccion)
+      .then(() => Api.listObras()
+        .then(obras => {
+          this.setState({obras})
+        })
+        .catch(err => {
+          console.error(err)
+        })
+      )
+      .catch(err => {
+        console.error(err)
+      })      
+  }
 
   handleClickDelete = (_id) => {
-    console.log('borrando!')
     Api.deleteObra(_id)
       .then(() => Api.listObras()
         .then(obras => {
@@ -48,11 +81,45 @@ class ObrasHome extends Component {
       })
   }
 
-  //componentWillMount renderiza directamente al cargar la pagina
+  handleClickCreate = (nombre, fecha, direccion) => {
+    const done = false
+
+    Api.createObra(nombre, fecha, direccion, done)
+      .then(() => Api.listObras()
+        .then(obras => {
+          console.log(obras)
+          this.setState({obras})
+        })
+        .catch(err => {
+          console.error(err)
+        })
+      )
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  onChangeNombre = event => {
+    event.preventDefault()
+
+    this.setState({nombre: event.target.value})
+  }
+
+  onChangeFecha = event => {
+    event.preventDefault()
+
+    this.setState({fecha: event.target.value})
+  }
+
+  onChangeDireccion = event => {
+    event.preventDefault()
+
+    this.setState({direccion: event.target.value})
+  }
+
   componentWillMount() {
     Api.listObras()
       .then(obras => {
-        console.log(obras)
         this.setState({obras})
       })
       .catch(function (err) {
@@ -61,9 +128,8 @@ class ObrasHome extends Component {
   }
 
 	render() {
-		return(<div>
-        <Navbar/>
-        <div className="container">
+		return(<div className="background-image">
+        <div className="container botspace">
         <h1>Obras en curso</h1>
         <button type="button" className="btn btn-default" data-toggle="modal" data-target="#myModal">Nueva Obra</button>
 
@@ -75,27 +141,27 @@ class ObrasHome extends Component {
                 <h4 className="modal-title">Nueva Obra</h4>
               </div>
               <div className="modal-body">
-                <form method="POST">
+                <form>
                   <div className="form-group">
-                    <input className="form-control" type="text" name="nombre" placeholder="NAME"/>
+                    <input className="form-control" type="text" name="nombre" placeholder="NAME" onChange={this.onChangeNombre}/>
                   </div>
                   <div className="form-group">
-                    <input className="form-control" type="date" name="fecha" value=""/>
+                    <input className="form-control" type="date" name="fecha" onChange={this.onChangeFecha}/>
                   </div>
                   <div className="form-group">
-                    <input className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN"/>
+                    <input className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN" onChange={this.onChangeDireccion}/>
                   </div>
                 </form>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="submit" className="btn btn-default signbuttons" data-dismiss="modal">GUARDAR</button>
+                <button onClick={()=>{this.handleClickCreate(this.state.nombre, this.state.fecha, this.state.direccion)}} type="submit" className="btn btn-default signbuttons" data-dismiss="modal">GUARDAR</button>
               </div>
             </div>
           </div>
         </div>
 
-        <table className="rwd-table table-striped table-hover">
+        <table className="rwd-table table-striped table-hover snow">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -114,20 +180,52 @@ class ObrasHome extends Component {
                   <td data-th="Fecha">{obra.fecha}</td>
                   <td data-th="Dirección">{obra.direccion}</td>
                   <td data-th="Acciones">
-                    <button onClick={()=>{this.handleClick(obra._id)}} className="btn btn-info btn-xs but"><span className="glyphicon glyphicon-ok"></span> Done</button>
-                    <button className="btn btn-primary btn-xs but"><span className="glyphicon glyphicon-pencil"></span> Edit</button>
+                    <button onClick={()=>{this.handleClickDone(obra._id)}} className="btn btn-info btn-xs but"><span className="glyphicon glyphicon-ok"></span> Done</button>
+                    <button className="btn btn-primary btn-xs but"
+                            type="button" data-toggle="modal" data-target={"#editModal-" + obra._id}>
+                            <span className="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                    <div id={"editModal-" + obra._id} className="modal fade" role="dialog">
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <h4 className="modal-title">Editar Obra</h4>
+                          </div>
+                          <div className="modal-body">
+                            <form>
+                              <div className="form-group">
+                                <input className="form-control" type="text" name="nombre" placeholder="NAME" onChange={this.onChangeNombre}/>
+                              </div>
+                              <div className="form-group">
+                                <input className="form-control" type="date" name="fecha" onChange={this.onChangeFecha}/>
+                              </div>
+                              <div className="form-group">
+                                <input className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN" onChange={this.onChangeDireccion}/>
+                              </div>
+                            </form>
+                          </div>
+                          <div className="modal-footer">
+                            <button type="button" className="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button onClick={()=>{this.handleClickEdit(obra._id, this.state.nombre, this.state.fecha, this.state.direccion)}} type="submit" className="btn btn-default signbuttons" data-dismiss="modal">GUARDAR CAMBIOS</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <button className="btn btn-danger btn-xs but"
-                            type="button" data-toggle="modal" data-target="#modalDelete">
+                            type="button" data-toggle="modal" data-target={"#deleteModal-" + obra._id}>
                             <span className="glyphicon glyphicon-remove"></span> Delete
                     </button>
-                      <div id="modalDelete" className="modal fade" role="dialog">
+                      <div id={"deleteModal-" + obra._id} className="modal fade" role="dialog">
                         <div className="modal-dialog">
                           <div className="modal-content">
                             <div className="modal-header">
-                              <h4 className="modal-title">BORRAR</h4>
+                              <h4 className="modal-title alert alert-danger text-center">ATENCIÓN!</h4>
                             </div>
                             <div className="modal-body">
-                              <p>Estas seguro de borrrar la obra de {obra.nombre}?</p>
+                              <div>
+                                <p>Estás seguro de borrar la obra de <span className="obraName">{obra.nombre}</span>?</p>
+                              </div>
                               <div className="row">
                                   <div className="col-12-xs text-center">
                                       <button onClick={()=>{this.handleClickDelete(obra._id)}} className="btn btn-success btn-md but" data-dismiss="modal">Si</button>
@@ -147,7 +245,7 @@ class ObrasHome extends Component {
 
         <h1>Obras terminadas</h1>
 
-        <table className="rwd-table table-striped table-hover">
+        <table className="rwd-table table-striped table-hover snow">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -166,7 +264,31 @@ class ObrasHome extends Component {
                   <td data-th="Fecha">{obra.fecha}</td>
                   <td data-th="Dirección">{obra.direccion}</td>
                   <td data-th="Acciones">
-                    <button onClick={()=>{this.handleClickDelete(obra._id)}} className="btn btn-danger btn-xs but"><span className="glyphicon glyphicon-remove"></span> Delete</button>
+                    <button onClick={()=>{this.handleClickNoDone(obra._id)}} className="btn btn-info btn-xs but"><span className="glyphicon glyphicon-arrow-up"></span> Up</button>
+                    <button className="btn btn-danger btn-xs but"
+                            type="button" data-toggle="modal" data-target={"#deleteModal-" + obra._id}>
+                            <span className="glyphicon glyphicon-remove"></span> Delete
+                    </button>
+                      <div id={"deleteModal-" + obra._id} className="modal fade" role="dialog">
+                        <div className="modal-dialog">
+                          <div className="modal-content">
+                            <div className="modal-header">
+                              <h4 className="modal-title alert alert-danger text-center">ATENCIÓN!</h4>
+                            </div>
+                            <div className="modal-body">
+                              <div>
+                                <p>Estás seguro de borrar la obra de <span className="obraName">{obra.nombre}</span>?</p>
+                              </div>
+                              <div className="row">
+                                  <div className="col-12-xs text-center">
+                                      <button onClick={()=>{this.handleClickDelete(obra._id)}} className="btn btn-success btn-md but" data-dismiss="modal">Si</button>
+                                      <button className="btn btn-danger btn-md but" data-dismiss="modal">No</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   </td>
                 </tr>)
             })

@@ -44,12 +44,44 @@ router.route('/stocks/:categoria')
             }))
     })
     .post((req, res) => {
-        const {id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha} = req.body
+        const {categoria} = req.params
+        const {fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio} = req.body
 
-        stockLogic.createProduct({id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha})
+        stockLogic.createProduct({categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio})
             .then(product => res.json({
                 status: 'OK',
                 message: 'New product created successfully',
+                data: product
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+
+router.route('/stocks/:categoria/:_id')
+    .put((req, res) => {
+        const {categoria, _id} = req.params
+        const {fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio} = req.body
+
+        stockLogic.editProduct(categoria, _id, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio)
+            .then(product => res.json({
+                status: 'OK',
+                message: 'Product edited successfully',
+                data: product
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+    .delete((req, res) => {
+        const {categoria, _id} = req.params
+
+        stockLogic.deleteProduct({categoria, _id})
+            .then(product => res.json({
+                status: 'OK',
+                message: 'Product deleted successfully',
                 data: product
             }))
             .catch(err => res.json({
@@ -73,9 +105,9 @@ router.route('/obras')
             }))
     })
     .post((req, res) => {
-        const {id, nombre, fecha, direccion, done, productos} = req.body
+        const {nombre, fecha, direccion, done, productos} = req.body
 
-        obrasLogic.createObra({id, nombre, fecha, direccion, done, productos})
+        obrasLogic.createObra({nombre, fecha, direccion, done, productos})
             .then(newObra => res.json({
                 status: 'OK',
                 message: 'New obra created successfully',
@@ -90,12 +122,28 @@ router.route('/obras')
 router.route('/obras/:_id')
     .patch((req, res) => {
         const {_id} = req.params
+        const {done} = req.body
 
-        obrasLogic.done({_id})
+        obrasLogic.done(_id, done)
             .then(done => res.json({
                 status: 'OK',
                 message: 'Done successfully',
                 data: done
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+    .put((req, res) => {
+        const {_id} = req.params
+        const {nombre, fecha, direccion} = req.body
+
+        obrasLogic.edit({_id}, nombre, fecha, direccion)
+            .then(edit => res.json({
+                status: 'OK',
+                message: 'Edited successfully',
+                data: edit
             }))
             .catch(err => res.json({
                 status: 'KO',

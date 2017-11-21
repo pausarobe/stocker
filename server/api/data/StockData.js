@@ -20,10 +20,30 @@ class StockData {
 		})
 	}
 
-	createProduct(id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha) {
-		const product = new Stock(id, categoria, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio, stock, fecha)
-
+	createProduct(categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio) {
+		const product = new Stock(categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio)
 		return product.save()
+	}
+
+	deleteProduct(categoria, _id) {
+		const deleteObra = new Stock(categoria, _id)
+		return deleteObra.remove()
+	}
+
+	editProduct(categoria, _id, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio) {
+		return Stock.findByIdAndUpdate(_id,
+			{
+				"categoria": categoria,
+				"fecha": fecha,
+				"stock": stock,
+				"unidad": unidad,
+				"marca": marca,
+				"descripcion": descripcion,
+				"refProveedor": refProveedor,
+				"cajas": cajas,
+				"proveedor": proveedor,
+				"precio": precio
+			})
 	}
 }
 

@@ -1,0 +1,16 @@
+#main {
+   position: relative;
+}
+#main:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(https://static.wixstatic.com/media/7beaf7_ad1a4d99538a4167859f92a80bc0ec2c~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_1903,h_1268,al_c,q_90,usm_0.66_1.00_0.01/7beaf7_ad1a4d99538a4167859f92a80bc0ec2c~mv2_d_5184_3456_s_4_2.jpg); 
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    opacity : 0.3;
+    z-index: -2;
+}

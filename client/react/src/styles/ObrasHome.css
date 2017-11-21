@@ -115,3 +115,16 @@ input{
     -moz-transition: none !important;
     -webkit-transition: none !important;
 }
+
+.obraName {
+  color: #01B0AE;
+  font-weight: bold;
+}
+
+.botspace {
+  margin-bottom: 50px;
+}
+
+.snow {
+  background-color: snow;
+}

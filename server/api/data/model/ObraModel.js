@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const ObraSchema = new Schema({
-	id: Number,
+	//id: Number,
 	nombre: String,
 	fecha: Date,
 	direccion: String,
 	done: Boolean,
 	productos: [{
-		id: Number,
+		//id: Number,
 		cantidad: Number
 	}]
 })

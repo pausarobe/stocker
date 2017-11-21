@@ -135,6 +135,10 @@ width: 150px;
   
 }
 
-.space {
+.botspace {
   margin-bottom: 50px;
+}
+
+.minAncho {
+  min-width: 90px
 }

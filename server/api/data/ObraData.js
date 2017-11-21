@@ -16,8 +16,8 @@ class ObraData {
 		})
 	}
 
-	createObra(id, nombre, fecha, direccion, done, productos) {
-		const obra =  new Obra(id, nombre, fecha, direccion, done, productos)
+	createObra(nombre, fecha, direccion, done, productos) {
+		const obra =  new Obra(nombre, fecha, direccion, done, productos)
 		return obra.save()
 	}
 
@@ -26,9 +26,17 @@ class ObraData {
 		return deleteObra.remove()
 	}
 
-	done(_id) {
-		const done = new Obra(_id)
-		return deleteObra.findByIdAndUpdate(_id, {$set: {"done": true}})
+	updateObraDone(_id, done) {
+		return Obra.findByIdAndUpdate(_id, {$set: {"done": done}})
+	}
+
+	edit(_id, nombre, fecha, direccion) {
+		return Obra.findOneAndUpdate(_id, 
+			{
+				"nombre": nombre,
+				"fecha": fecha,
+				"direccion": direccion
+			})
 	}
 }
 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import Api from '../api/Api'
 
-import Navbar from './Navbar'
 import '../styles/StockHome.css'
 
 class StockHome extends Component {
@@ -29,7 +28,6 @@ class StockHome extends Component {
 
 	render() {
 		return(<div>
-			<Navbar/>
 			<div className="container">
 				{
 					this.state.categorias.map((categoria) => {

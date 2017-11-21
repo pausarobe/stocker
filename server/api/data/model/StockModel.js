@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const StockSchema = new Schema({
-	id: Number,
+	//id: Number,
 	categoria: String,
 	unidad: String,
 	marca: String,
