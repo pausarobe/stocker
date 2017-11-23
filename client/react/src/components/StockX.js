@@ -10,6 +10,7 @@ class StockX extends Component {
 
         this.state = {
             products: [],
+            obras: [],
             fecha: '',
             stock: '',
             unidad: '',
@@ -18,7 +19,8 @@ class StockX extends Component {
             refProveedor: '',
             cajas: '',
             proveedor: '',
-            precio: ''
+            precio: '',
+            nombre: ''
         }
     }
 
@@ -68,6 +70,13 @@ class StockX extends Component {
             .catch(err=> {
                 console.error(err)
             }) 
+    }
+
+    handleClickObraId = (_id, nombre) => {
+      console.log(_id)
+      console.log(nombre)
+
+      this.setState({nombre: nombre})
     }
 
     onChangeFecha = event => {
@@ -132,12 +141,20 @@ class StockX extends Component {
             .catch(function (err) {
                 console.error (err)
             })
+
+        Api.listObras()
+          .then(obras => {
+            this.setState({obras})
+          })
+          .catch(err => {
+            console.error(err)
+          })
     }
 
 	render() {
 		return(<div>
 	<div className="container">
-	<h1> stock de <span className="title">{this.props.match.params.category.toUpperCase()}</span></h1>
+	<h1><p><span className="title">{this.props.match.params.category.toUpperCase()}</span></p></h1>
     <button type="button" className="btn btn-default" data-toggle="modal" data-target="#newProduct">Nuevo Producto</button>
         <div id="newProduct" className="modal fade" role="dialog">
           <div className="modal-dialog">
@@ -228,7 +245,7 @@ class StockX extends Component {
                         <td data-th="Precio Total">{(product.precio * product.stock).toFixed(2)} €</td>
                         <td data-th="Acción" className="text-center">
                             <a href="#" className="btn btn-success btn-xs but"><span className="glyphicon glyphicon-plus"></span></a>
-                            <button className="bt btn-primary btn-xs but"
+                            <button className="btn btn-primary btn-xs but"
                                     type="button" data-toggle="modal" data-target={"#editProductModal-" + product._id}>
                                     <span className="glyphicon glyphicon-pencil"></span>
                             </button>
@@ -290,7 +307,7 @@ class StockX extends Component {
                                     </div>
                                   </div>
                                 </div>
-                            <button className="bt btn-danger btn-xs but"
+                            <button className="btn btn-danger btn-xs but"
                                     type="button" data-toggle="modal" data-target={"#deleteProductModal-" + product._id}>
                                     <span className="glyphicon glyphicon-remove"></span>
                             </button>
@@ -324,54 +341,55 @@ class StockX extends Component {
 <div className="container botspace">
 	<div className="row col-md-5">
 		<h3 className="text-center">Productos para añadir</h3>
-		<div className="col-md-12 left snow">
+		
 			<div>
 				<div className="col-md-11">
-					<p>Valvula onotubo blanco Escuadra de 35mm de separación entre ejes </p>
+					<p className="snow">Valvula onotubo blanco Escuadra de 35mm de separación entre ejes </p>
 				</div>
 				<div className="col-md-1">
-					<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
-                </div>
+					<button type="button" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></button>
+        </div>
 				<br/>
 			</div>
 			<div>
 				<div className="col-md-11">
-					<p>Llave Monotubo 1/2'' NTM</p>
+					<p className="snow">Llave Monotubo 1/2'' NTM</p>
 				</div>
 				<div className="col-md-1">
-					<a href="#" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></a>
+					<button type="button" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></button>
 				</div>
 				<br/>
 			</div>
-		</div>
+		
 	</div>
 
 	<div className="row col-md-2 text-center center">
-		<button className="btn-lg btn-primary glyphicon glyphicon-circle-arrow-right"></button>
+		<button className="btn btn-lg btn-primary glyphicon glyphicon-circle-arrow-right"></button>
 	</div>
 
 	<div className="row col-md-5">
-		<h3 className="text-center">Obra</h3>
-		<div className="col-md-12 right snow">
+		<h3 className="text-center">Selecciona la obra</h3>
 			<div className="col-md-8">
-				<div className="dropdown">
-	  				<button className="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Selecciona la obra
-	  				<span className="caret"></span></button>
-	  				<ul className="dropdown-menu">
-    {/*                {
-                        this.state.obras.map(obra => {
-                            return (<li>{obra.nombre}</li>)
-                        })
-                    }*/}
-	  				</ul>
-				</div>
-                <p>Obra de:</p>
-				<h4>Pedro Picapiedra</h4>
+        <div className="btn-group">
+          <p className="snow"><strong className="obraSelected">{this.state.nombre}</strong>
+            <button type="button" className="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span className="caret"></span></button>
+            <ul className="dropdown-menu pull-right">
+             {
+                this.state.obras.filter(obra => {
+                  return obra.done === false
+                }).map(obra => {
+                  return (<li onClick={()=>{this.handleClickObraId(obra._id, obra.nombre)}}><a>{obra.nombre}</a></li>)
+                })
+              }     
+            </ul>
+          </p>
+        </div>
 			</div>
 			<div className="col-md-4">
-				<button type="button" className="btn-success btn-xlarge">Confirmar</button>
+				<button type="button" className="btn btn-default btn-xlarge">Confirmar</button>
 			</div>
-		</div>
+		
 	</div>
 </div>
 </div>)

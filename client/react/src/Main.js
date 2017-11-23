@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 
 import StockX from './components/StockX'
+import ObrasX from './components/ObrasX'
 import StockHome from './components/StockHome'
 import ObrasHome from './components/ObrasHome'
 import Footer from './components/Footer'
@@ -17,8 +18,9 @@ class Main extends Component {
 			<Navbar/>
 			<Switch>
 				<Route exact path="/" component={StockHome}/>
-				<Route path="/stock/:category" component={StockX}/>
-				<Route path="/obras" component={ObrasHome}/>
+				<Route exact path="/stock/:category" component={StockX}/>
+				<Route exact path="/obras" component={ObrasHome}/>
+				<Route exact path="/obras/:nombre" component={ObrasX}/>
 			</Switch>
 			<Footer/>
 		</div>

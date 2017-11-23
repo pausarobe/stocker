@@ -94,9 +94,9 @@ h1, h3 {
   color: #605e79;
 }
 
-li {
+/*li {
     list-style: none;
-}
+}*/
 
 .left {
     border: 1px solid #aaa;
@@ -141,4 +141,48 @@ width: 150px;
 
 .minAncho {
   min-width: 90px
+}
+
+.obraSelected {
+  padding-right: 20px;
+  color: #01B0AE;
+  font-size: 20px;
+}
+
+
+/*_______________*/
+
+
+.btn-default {
+  background: transparent;
+  padding: 15px;
+  font-weight: 1000;
+  border: 2px solid #01B0AE;
+  color: #01B0AE;
+}
+
+.btn-default:hover {
+  background: snow;
+  color: #01B0AE;
+  border: 2px solid #01B0AE;
+}
+
+.btn-info:hover {
+  background: transparent;
+  color: #28a4c9;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: #296294;
+}
+
+.btn-danger:hover {
+  background: transparent;
+  color: #d34a46;
+}
+
+.btn-success:hover {
+  background: transparent;
+  color: #51ab51;  
 }

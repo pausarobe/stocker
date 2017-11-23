@@ -58,6 +58,11 @@ const Api = {
 	edit: function(_id, nombre, fecha, direccion) {
 		return axios.put(this.url + '/obras/' + _id, {nombre, fecha, direccion})
 			.then(res => res.data.data)
+	},
+
+	name: function(nombre) {
+		return axios.get(this.url + '/obras/' + nombre)
+			.then(res => res.data.data)
 	}
 
 }

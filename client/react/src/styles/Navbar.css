@@ -26,6 +26,10 @@
     margin: 25px 15px 25px 0;
 }
 
-li:active { 
-    background-color: yellow;
+.activeD { 
+    background-color: #01B0AE;
+}
+
+.defaultD {
+    background-color: snow;
 }

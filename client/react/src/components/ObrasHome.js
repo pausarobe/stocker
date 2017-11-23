@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Api from '../api/Api'
+import { Link } from 'react-router-dom'
 
 import '../styles/ObrasHome.css'
 
@@ -130,7 +131,7 @@ class ObrasHome extends Component {
 	render() {
 		return(<div className="background-image">
         <div className="container botspace">
-        <h1>Obras en curso</h1>
+        <h1><p>Obras en curso</p></h1>
         <button type="button" className="btn btn-default" data-toggle="modal" data-target="#myModal">Nueva Obra</button>
 
         <div id="myModal" className="modal fade" role="dialog">
@@ -174,9 +175,9 @@ class ObrasHome extends Component {
           {
             this.state.obras.filter(obra => {
               return obra.done === false
-            }).map(obra => {
+            }).map(obra => { 
               return (<tr>
-                  <td data-th="Nombre">{obra.nombre}</td>
+                  <td data-th="Nombre"><Link to={`/obras/${obra.nombre}`}>{obra.nombre}</Link></td>
                   <td data-th="Fecha">{obra.fecha}</td>
                   <td data-th="Dirección">{obra.direccion}</td>
                   <td data-th="Acciones">
@@ -243,7 +244,7 @@ class ObrasHome extends Component {
             </tbody>
         </table>
 
-        <h1>Obras terminadas</h1>
+        <h1><p>Obras terminadas</p></h1>
 
         <table className="rwd-table table-striped table-hover snow">
           <thead>

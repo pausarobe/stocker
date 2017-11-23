@@ -6,6 +6,40 @@ import { Link } from 'react-router-dom'
 
 
 class Navbar extends Component {
+	constructor() {
+		super()
+
+		this.state = {
+			conditionStock: false,
+			conditionObras: false,
+			conditionControl: false
+		}
+	}
+
+	handleClickStock = () => {
+		this.setState({
+			conditionStock: !this.state.conditionStock,
+			conditionObras: false,
+			conditionControl: false
+		})
+	}
+
+	handleClickObras = () => {
+		this.setState({
+			conditionStock: false,
+			conditionObras: !this.state.conditionObras,
+			conditionControl: false
+		})
+	}
+
+	handleClickControl = () => {
+		this.setState({
+			conditionStock: false,
+			conditionObras: false,			
+			conditionControl: !this.state.conditionControl
+		})
+	}
+
 	render() {
 		return (<nav className="navbar navbar-default navbar-static-top">
 	<div className="container">
@@ -16,13 +50,13 @@ class Navbar extends Component {
 				<span className="icon-bar"></span>
 				<span className="icon-bar"></span>
 			</button>
-			<Link to={"/"}><img src={logo} alt="Danma"/></Link>
+			<Link to={"/"}><img onClick={this.handleClickStock} src={logo} alt="Danma"/></Link>
 		</div>
-		<div className="navbar-collapse collapse">
+		<div id="navbar3" className="navbar-collapse collapse">
 			<ul className="nav navbar-nav navbar-right">
-				<li><Link to={"/"}>STOCK</Link></li>
-				<li><Link to={"/obras"}>OBRAS</Link></li>
-				<li><Link to={"/"}>CONTROL</Link></li>
+				<li onClick={this.handleClickStock} className={this.state.conditionStock? 'activeD': 'defaultD'}><Link to={"/"}>STOCK</Link></li>
+				<li onClick={this.handleClickObras} className={this.state.conditionObras? 'activeD': 'defaultD'}><Link to={"/obras"}>OBRAS</Link></li>
+				<li onClick={this.handleClickControl} className={this.state.conditionControl? 'activeD': 'defaultD'}><Link to={"/"}>CONTROL</Link></li>
 			</ul>
 		</div>
 	</div>
