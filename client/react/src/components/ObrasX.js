@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import '../styles/ObrasX.css'
 
 import Api from '../api/Api'
-import ObrasHome from './ObrasHome'
-
 
 
 class ObrasX extends Component {
@@ -12,7 +10,8 @@ class ObrasX extends Component {
 		super()
 
 		this.state = {
-			obras: []
+			obras: [],
+			products: []
 		}
 
 	}
@@ -26,8 +25,15 @@ class ObrasX extends Component {
 			.catch(err => {
 				console.error(err)
 			})
+		// Api.listAllProducts()
+		// 	.then(products => {
+		// 		console.log(products)
+		// 		this.setState({products})
+		// 	})
+		// 	.catch(err => {
+		// 		console.error(err)
+		// 	})
 
-		// Api.etc
 	}
 
 	render() {
@@ -42,7 +48,18 @@ class ObrasX extends Component {
 			</div>
 			<h3>Productos</h3>
 			<div className="snow">
-			<p>hola</p>
+			<p>
+				{
+					this.state.obras.map((obra) => {
+						return (<div>
+							<div>{obra.fecha}</div>
+							<div>{obra.direccion}</div>
+							<div>{obra.productos[0][0].stockQuantity}</div>
+							<div>{obra.productos[0][0].idProduct}</div>
+						</div>)
+					})
+				}
+			</p>
 			</div>
 		</div>)
 	}

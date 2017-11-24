@@ -45,6 +45,10 @@ class StockData {
 				"precio": precio
 			})
 	}
+
+	listAllProducts(idObras) {
+		return Stock.find().exec()
+	}
 }
 
 module.exports = StockData

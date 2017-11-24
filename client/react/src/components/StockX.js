@@ -84,9 +84,8 @@ class StockX extends Component {
     }
 
     handleClickConfirm = () => {
-      const prods = this.state.stockSelected.map((item)=> item.idProduct)
 
-      Api.updateObraProducts()
+      Api.updateObraProducts(this.state.idObra, this.state.stockSelected)
         .then(()=> this.loadData())
     }
 
@@ -100,8 +99,6 @@ class StockX extends Component {
         descripcion: descripcion,
         stockQuantity: this.state.stockQuantity
       }
-
-      //this.setState({stockSelected: this.state.stockSelected.concat([select])})
 
       this.setState(prevState => {
         return {

@@ -1,4 +1,5 @@
 const Obra = require('./model/ObraModel')
+const Stock = require('./model/StockModel')
 
 class ObraData {
 	listObras() {
@@ -6,15 +7,17 @@ class ObraData {
 	}
 
 	name(nombre) {
-		return new Promise((resolve, reject) => {
-			if (!nombre)
-				throw new Error('nombre no especificado')
-
-			Obra.find({nombre})
-				.then(resolve)
-				.catch(reject)
-		})
+		return Obra.find({nombre})
+				   .populate('productos.$.idProduct')
 	}
+
+	// name(nombre) {
+	// 	return Obra.find({nombre})
+	// 		.populate()
+	// }
+
+ //  populate({ path: 'fans', select: 'name' }).
+ //  populate({ path: 'fans', select: 'email' });
 
 	createObra(nombre, fecha, direccion, done, productos) {
 		const obra =  new Obra(nombre, fecha, direccion, done, productos)
@@ -39,15 +42,16 @@ class ObraData {
 			})
 	}
 
-	// updateObraProducts(idObra, stockSelected) {
-	// 	return Obra.findByIdAndUpdate(idObra, 
-	// 		{ 
-	// 			$push: {"productos": [{
-	// 				producto: stockSelected,
-	// 				cantidad: 
-	// 			}]}
-	// 		})
-	// }
+	updateObraProducts(idObra, stockSelected) {
+		stockSelected = stockSelected.map((stock)=> {
+			delete stock.descripcion 
+			return stock
+		})
+		return stockSelected.map(product =>  Obra.findByIdAndUpdate(idObra, 
+			{ 
+				$push: {"productos":  product}
+			}))
+	}
 } 
 
 module.exports = ObraData

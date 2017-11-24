@@ -68,6 +68,11 @@ const Api = {
 	updateObraProducts: function(idObra, stockSelected) {
 		return axios.put(this.url + '/update/obras/' + idObra, {stockSelected})
 			.then(res => res.data.data)
+	},
+
+	listAllProducts: function(idObra) {
+		return axios.get(this.url + '/update/obras/' + idObra)
+			.then(res => res.data.data)
 	}
 
 }

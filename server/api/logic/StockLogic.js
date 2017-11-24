@@ -20,6 +20,10 @@ class StockLogic {
 	editProduct(categoria, _id, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio) {
 		return stockData.editProduct(categoria, _id, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio)
 	}
+
+	listAllProducts(idObra) {
+		return stockData.listAllProducts(idObra)
+	}
 }
 
 module.exports = StockLogic

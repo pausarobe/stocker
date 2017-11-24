@@ -14,6 +14,7 @@ const obrasLogic = new(require('./logic/ObrasLogic'))
 const router = express.Router()
 
 router.route('/stocks')
+    //lista solo la categoria, solo una de cada tipo
     .get((req, res) => {
 
         stockLogic.listCategories()
@@ -29,6 +30,7 @@ router.route('/stocks')
     })
 
 router.route('/stocks/:categoria')
+    //lista todos los productos de una categoria especifica
     .get((req, res) => {
         const {categoria} = req.params
 
@@ -43,6 +45,7 @@ router.route('/stocks/:categoria')
                 message: err.message
             }))
     })
+    //añade un producto a la categoria
     .post((req, res) => {
         const {categoria} = req.params
         const {fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio} = req.body
@@ -60,6 +63,7 @@ router.route('/stocks/:categoria')
     })
 
 router.route('/stocks/:categoria/:_id')
+    //edita un producto de la categoria
     .put((req, res) => {
         const {categoria, _id} = req.params
         const {fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio} = req.body
@@ -75,6 +79,7 @@ router.route('/stocks/:categoria/:_id')
                 message: err.message
             }))
     })
+    //elimina un producto de la categoria
     .delete((req, res) => {
         const {categoria, _id} = req.params
 
@@ -91,11 +96,12 @@ router.route('/stocks/:categoria/:_id')
     })
 
 router.route('/update/obras/:idObra')
+    //añade productos a una obra
     .put((req, res) => {
         const { idObra } = req.params
         const { stockSelected } = req.body
 
-        obrasLogic.updateObraProducts({idObra, stockSelected})
+        obrasLogic.updateObraProducts(idObra, stockSelected)
             .then(obras => res.json({
                 status: 'OK',
                 message: 'Added new products successfully',
@@ -106,8 +112,24 @@ router.route('/update/obras/:idObra')
                 message: err.message
             }))
     })
+    //lista todos los productos de una obra
+    .get((req, res) => {
+        const { idObra } = req.params
+
+        stockLogic.listAllProducts(idObra)
+            .then(products => res.json({
+                status: 'OK',
+                messsage: 'Listed all products successfully',
+                data: products
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
 
 router.route('/obras')
+    //lista las obras existentes
     .get((req, res) => {
 
         obrasLogic.listObras()
@@ -121,6 +143,7 @@ router.route('/obras')
                 message: err.message
             }))
     })
+    //crea una nueva obra
     .post((req, res) => {
         const {nombre, fecha, direccion, done, productos} = req.body
 
@@ -137,6 +160,7 @@ router.route('/obras')
     })
 
 router.route('/obras/:_id')
+    //cambia el estado de la obra de "en curso" a "terminada"
     .patch((req, res) => {
         const {_id} = req.params
         const {done} = req.body
@@ -152,6 +176,7 @@ router.route('/obras/:_id')
                 message: err.message
             }))
     })
+    //edita una obra
     .put((req, res) => {
         const {_id} = req.params
         const {nombre, fecha, direccion} = req.body
@@ -167,6 +192,7 @@ router.route('/obras/:_id')
                 message: err.message
             }))
     })
+    //elimina una obra
     .delete((req, res) => {
         const {_id} = req.params
 
@@ -184,14 +210,15 @@ router.route('/obras/:_id')
 
 
 router.route('/obras/:nombre')
+    //lista una obra en concreto
     .get((req, res) => {
         const {nombre} = req.params
 
         obrasLogic.name(nombre)
-            .then(name => res.json({
+            .then(stock => res.json({
                 status: 'OK',
-                message: `Obra de ${name} listed successfully`,
-                data: name
+                message: `Obra listed successfully`,
+                data: stock
             }))
             .catch(err => res.json({
                 status: 'KO',

@@ -8,8 +8,8 @@ const ObraSchema = new Schema({
 	direccion: String,
 	done: Boolean,
 	productos: [{
-	   producto: { type: Schema.ObjectId, ref: "Stock" },
-	   cantidad: Number
+	   idProduct: { type: Schema.ObjectId, ref: "Stock" },
+	   stockQuantity: Number
 	}]
 })
 
