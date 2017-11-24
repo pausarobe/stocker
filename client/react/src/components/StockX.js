@@ -20,7 +20,10 @@ class StockX extends Component {
             cajas: '',
             proveedor: '',
             precio: '',
-            nombre: ''
+            nombre: '',
+            stockQuantity: 0,
+            stockSelected: [],
+            idObra: ''
         }
     }
 
@@ -77,6 +80,51 @@ class StockX extends Component {
       console.log(nombre)
 
       this.setState({nombre: nombre})
+      this.setState({idObra: _id})
+    }
+
+    handleClickConfirm = () => {
+      const prods = this.state.stockSelected.map((item)=> item.idProduct)
+
+      Api.updateObraProducts()
+        .then(()=> this.loadData())
+    }
+
+    handleClickConfirmStock = (_id, descripcion) => {
+      console.log(_id)
+      console.log(descripcion)
+      console.log(this.state.stockQuantity)
+
+      const select = {
+        idProduct: _id,
+        descripcion: descripcion,
+        stockQuantity: this.state.stockQuantity
+      }
+
+      //this.setState({stockSelected: this.state.stockSelected.concat([select])})
+
+      this.setState(prevState => {
+        return {
+          stockSelected: prevState.stockSelected.concat(select)
+        }
+      })
+    }
+
+    handleClickRemoveProduct = (id) => {
+      console.log(id)
+
+      const selected = this.state.stockSelected.filter((item)=> item.id !== id)
+
+      this.setState({stockSelected: selected})
+
+      console.log(this.state.stockSelected)
+    }
+
+    onChangeQuantityStock = event => {
+      event.preventDefault()
+
+      this.setState({stockQuantity: parseInt(event.target.value)})
+
     }
 
     onChangeFecha = event => {
@@ -133,8 +181,8 @@ class StockX extends Component {
         this.setState({precio: event.target.value})
     }
 
-    componentWillMount() {
-        Api.showCategory(this.props.match.params.category)
+    loadData =  () => {
+      Api.showCategory(this.props.match.params.category)
             .then(products => {
                 this.setState({products})
             })
@@ -149,6 +197,10 @@ class StockX extends Component {
           .catch(err => {
             console.error(err)
           })
+    }
+
+    componentWillMount() {
+        this.loadData()
     }
 
 	render() {
@@ -241,13 +293,40 @@ class StockX extends Component {
                         <td data-th="Ref">{product.refProveedor}</td>
                         <td data-th="Ud caja">{product.cajas}</td>
                         <td data-th="Proveedor">{product.proveedor}</td>
-                        <td data-th="Precio Ud">{product.precio} €</td>
+                        <td data-th="Precio Ud">{(product.precio).toFixed(2)} €</td>
                         <td data-th="Precio Total">{(product.precio * product.stock).toFixed(2)} €</td>
                         <td data-th="Acción" className="text-center">
-                            <a href="#" className="btn btn-success btn-xs but"><span className="glyphicon glyphicon-plus"></span></a>
+                            <button className="btn btn-success btn-xs but" 
+                              type="button" data-toggle="modal" data-target={"#udProductModal-" + product._id}>
+                              <span className="glyphicon glyphicon-plus"></span>
+                            </button>
+                            <div id={"udProductModal-" + product._id} className="modal fade" role="dialog">
+                              <div className="modal-dialog">
+                                <div className="modal-content">
+                                  <div className="modal-header">
+                                    <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                    <h4 className="modal-title">Cantidad de producto a traspasar</h4>
+                                  </div>
+                                  <div className="modal-body">
+                                    <form>
+                                      <div className="form-group">
+                                        <input className="form-control" type="number" onChange={this.onChangeQuantityStock}/>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div className="modal-footer">
+                                    <button type="button" className="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <button onClick={() => {this.handleClickConfirmStock(
+                                      product._id,
+                                      product.descripcion
+                                      )}} type="submit" className="btn btn-default signbuttons" data-dismiss="modal">CONFIRMAR CANTIDAD</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                             <button className="btn btn-primary btn-xs but"
-                                    type="button" data-toggle="modal" data-target={"#editProductModal-" + product._id}>
-                                    <span className="glyphicon glyphicon-pencil"></span>
+                              type="button" data-toggle="modal" data-target={"#editProductModal-" + product._id}>
+                              <span className="glyphicon glyphicon-pencil"></span>
                             </button>
                         <div id={"editProductModal-" + product._id} className="modal fade" role="dialog">
                                   <div className="modal-dialog">
@@ -339,37 +418,30 @@ class StockX extends Component {
 </div>
 
 <div className="container botspace">
-	<div className="row col-md-5">
+	<div className="row col-md-7">
 		<h3 className="text-center">Productos para añadir</h3>
-		
-			<div>
-				<div className="col-md-11">
-					<p className="snow">Valvula onotubo blanco Escuadra de 35mm de separación entre ejes </p>
-				</div>
-				<div className="col-md-1">
-					<button type="button" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></button>
+		{
+      this.state.stockSelected.map(product => {
+        return (<p className="snow">
+        <div className="col-md-11">
+          <span><strong className="big">{product.stockQuantity}</strong> - {product.descripcion}</span>
         </div>
-				<br/>
-			</div>
-			<div>
-				<div className="col-md-11">
-					<p className="snow">Llave Monotubo 1/2'' NTM</p>
-				</div>
-				<div className="col-md-1">
-					<button type="button" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></button>
-				</div>
-				<br/>
-			</div>
-		
+        <div className="col-md-1">
+          <button onClick={()=>{this.handleClickRemoveProduct(product.id)}} type="button" className="btn btn-danger btn-xs"><span className="glyphicon glyphicon-remove"></span></button>
+        </div>
+        <br/>
+      </p>)
+      })
+    }
 	</div>
 
-	<div className="row col-md-2 text-center center">
+{/*	<div className="row col-md-2 text-center center">
 		<button className="btn btn-lg btn-primary glyphicon glyphicon-circle-arrow-right"></button>
-	</div>
+	</div>*/}
 
 	<div className="row col-md-5">
 		<h3 className="text-center">Selecciona la obra</h3>
-			<div className="col-md-8">
+			<div className="col-md-9">
         <div className="btn-group">
           <p className="snow"><strong className="obraSelected">{this.state.nombre}</strong>
             <button type="button" className="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -386,8 +458,8 @@ class StockX extends Component {
           </p>
         </div>
 			</div>
-			<div className="col-md-4">
-				<button type="button" className="btn btn-default btn-xlarge">Confirmar</button>
+			<div className="col-md-3">
+				<button onClick={()=>{this.handleClickConfirm()}} type="button" className="btn btn-default btn-xlarge">Confirmar</button>
 			</div>
 		
 	</div>

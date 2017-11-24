@@ -38,6 +38,16 @@ class ObraData {
 				"direccion": direccion
 			})
 	}
-}
+
+	// updateObraProducts(idObra, stockSelected) {
+	// 	return Obra.findByIdAndUpdate(idObra, 
+	// 		{ 
+	// 			$push: {"productos": [{
+	// 				producto: stockSelected,
+	// 				cantidad: 
+	// 			}]}
+	// 		})
+	// }
+} 
 
 module.exports = ObraData

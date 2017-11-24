@@ -90,6 +90,23 @@ router.route('/stocks/:categoria/:_id')
             }))
     })
 
+router.route('/update/obras/:idObra')
+    .put((req, res) => {
+        const { idObra } = req.params
+        const { stockSelected } = req.body
+
+        obrasLogic.updateObraProducts({idObra, stockSelected})
+            .then(obras => res.json({
+                status: 'OK',
+                message: 'Added new products successfully',
+                data: obras
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+
 router.route('/obras')
     .get((req, res) => {
 

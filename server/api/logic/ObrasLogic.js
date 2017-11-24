@@ -29,6 +29,10 @@ class ObrasLogic {
 		return obraData.edit(_id, nombre, fecha, direccion)
 	}
 
+	updateObraProducts(idObra, stockSelected) {
+		return obraData.updateObraProducts(idObra, stockSelected)
+	}
+
 }
 
 module.exports = ObrasLogic

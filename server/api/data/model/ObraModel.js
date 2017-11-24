@@ -7,9 +7,10 @@ const ObraSchema = new Schema({
 	fecha: Date,
 	direccion: String,
 	done: Boolean,
-	productos: [
-		{ type: Schema.ObjectId, ref: "Stock" } 
-	]
+	productos: [{
+	   producto: { type: Schema.ObjectId, ref: "Stock" },
+	   cantidad: Number
+	}]
 })
 
 module.exports = mongoose.model('Obra', ObraSchema)

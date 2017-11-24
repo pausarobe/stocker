@@ -63,6 +63,11 @@ const Api = {
 	name: function(nombre) {
 		return axios.get(this.url + '/obras/' + nombre)
 			.then(res => res.data.data)
+	},
+
+	updateObraProducts: function(idObra, stockSelected) {
+		return axios.put(this.url + '/update/obras/' + idObra, {stockSelected})
+			.then(res => res.data.data)
 	}
 
 }
