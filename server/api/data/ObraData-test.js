@@ -8,25 +8,28 @@ const obraData = new (require('./ObraData'))
 const stockData = new (require('./StockData'))
 
 obraData.createObra('Pedro', new Date(), 'AV. Piedra 33', false)
-	.then((obra) => {
+	.then(obra => {
 		return stockData.createProduct('Accesorios', new Date(), 10, 'unidad', 'marca', 'descripcion', 'refProveedor', 10, 'proveedor', 10)
-			.then(() => {
+			.then(producto => {
+				console.log('producto -> ', JSON.stringify(producto))
+
 				return stockData.category('Accesorios')
-					.then((productos) => {
+					.then(productos => {
 						const stockSelected = productos.map(producto => ({ _id: producto._id, stockQuantity: 10 }))
 						
 						return obraData.updateObraProducts(obra.id, stockSelected)
 							.then(updatedObra => {
-								console.log(JSON.stringify(updatedObra))
+								console.log('obra -> ', JSON.stringify(updatedObra))
 
 								return obraData.deleteObra(obra._id)
-							})
-							.then(() => {
-								const productDeletes = productos.map(producto => stockData.deleteProduct(producto.categoria, producto._id))
-
-								return Promise.all(productDeletes)
+									.then(() => {
+										const productDeletes = productos.map(producto => stockData.deleteProduct(producto.categoria, producto._id))
+		
+										return Promise.all(productDeletes)
+									})
 							})
 					})
 			})
 	})
+	.then(process.exit)
 	.catch(console.error)
