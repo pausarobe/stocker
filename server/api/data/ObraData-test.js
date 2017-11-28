@@ -14,9 +14,17 @@ obraData.createObra('Pedro', new Date(), 'AV. Piedra 33', false)
 				return stockData.category('Accesorios')
 					.then((productos) => {
 						const stockSelected = productos.map(producto => ({ _id: producto._id, stockQuantity: 10 }))
-						return obraData.updateObraProducts(obra._id, stockSelected)
+						
+						return obraData.updateObraProducts(obra.id, stockSelected)
 							.then(updatedObra => {
 								console.log(JSON.stringify(updatedObra))
+
+								return obraData.deleteObra(obra._id)
+							})
+							.then(() => {
+								const productDeletes = productos.map(producto => stockData.deleteProduct(producto.categoria, producto._id))
+
+								return Promise.all(productDeletes)
 							})
 					})
 			})

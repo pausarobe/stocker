@@ -14,6 +14,11 @@ class ObraData {
 	retrieve(id) {
 		return Obra.findById(id)
 			.populate('productos.$.producto')
+
+		// return Obra.findById(id)
+		// 	.then(obra => {
+		// 		return obra.populate('productos.$.producto')
+		// 	})
 	}
 
 	// name(nombre) {
