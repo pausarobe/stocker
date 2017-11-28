@@ -11,7 +11,7 @@ const StockSchema = new Schema({
 	proveedor: String,
 	precio: Number,
 	stock: Number,
-	fecha: Date
+	fecha: Date.parse()
 })
 
 module.exports = mongoose.model('Stock', StockSchema)

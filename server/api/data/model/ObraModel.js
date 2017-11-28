@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const ObraSchema = new Schema({
 	nombre: String,
-	fecha: Date,
+	fecha: Date.parse(),
 	direccion: String,
 	done: Boolean,
 	productos: [{
