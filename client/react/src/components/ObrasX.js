@@ -54,8 +54,6 @@ class ObrasX extends Component {
 						return (<div>
 							<div>{obra.fecha}</div>
 							<div>{obra.direccion}</div>
-							<div>{obra.productos[0][0].stockQuantity}</div>
-							<div>{obra.productos[0][0].idProduct}</div>
 						</div>)
 					})
 				}

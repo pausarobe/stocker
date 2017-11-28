@@ -6,9 +6,14 @@ class ObraData {
 		return Obra.find().exec()
 	}
 
-	name(nombre) {
+	retrieveByName(nombre) {
 		return Obra.find({nombre})
-				   .populate('productos.$.idProduct')
+				   .populate('productos.$.producto')
+	}
+
+	retrieve(id) {
+		return Obra.findById(id)
+			.populate('productos.$.producto')
 	}
 
 	// name(nombre) {
@@ -19,8 +24,8 @@ class ObraData {
  //  populate({ path: 'fans', select: 'name' }).
  //  populate({ path: 'fans', select: 'email' });
 
-	createObra(nombre, fecha, direccion, done, productos) {
-		const obra =  new Obra(nombre, fecha, direccion, done, productos)
+	createObra(nombre, fecha, direccion, done) {
+		const obra =  new Obra(nombre, fecha, direccion, done)
 		return obra.save()
 	}
 
@@ -43,14 +48,20 @@ class ObraData {
 	}
 
 	updateObraProducts(idObra, stockSelected) {
-		stockSelected = stockSelected.map((stock)=> {
-			delete stock.descripcion 
-			return stock
+
+		const newStockSelected = stockSelected.map((stock)=> {
+			return { producto: stock._id, stockQuantity: stock.stockQuantity }
 		})
-		return stockSelected.map(product =>  Obra.findByIdAndUpdate(idObra, 
+
+		//array de promesas
+		const updates = stockSelected.map(product =>  Obra.findByIdAndUpdate(idObra, 
 			{ 
 				$push: {"productos":  product}
 			}))
+		
+		//espera que se acaben todas las promesas
+		return Promise.all(updates)
+			.then(() => this.retrieve(idObra))
 	}
 } 
 

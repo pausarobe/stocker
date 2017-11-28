@@ -280,7 +280,13 @@ class StockX extends Component {
     </thead>
         <tbody>
             {
-                this.state.products.map((product) => {
+                this.state.products.map((product) => { 
+                var total = (product.precio * product.stock).toFixed(2)
+
+                function result () {
+                  
+                }
+                console.log(total)                 
                     return (<tr>
                         <td data-th="Fecha">{product.fecha}</td>
                         <td data-th="Cantidad">{product.stock}</td>
@@ -432,10 +438,6 @@ class StockX extends Component {
     }
 	</div>
 
-{/*	<div className="row col-md-2 text-center center">
-		<button className="btn btn-lg btn-primary glyphicon glyphicon-circle-arrow-right"></button>
-	</div>*/}
-
 	<div className="row col-md-5">
 		<h3 className="text-center">Selecciona la obra</h3>
 			<div className="col-md-9">
@@ -460,6 +462,11 @@ class StockX extends Component {
 			</div>
 		
 	</div>
+</div>
+
+<div className="container botspace">
+  
+  <p className="snow pull-right">Total: </p>
 </div>
 </div>)
 	}

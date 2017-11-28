@@ -54,9 +54,9 @@ class Navbar extends Component {
 		</div>
 		<div id="navbar3" className="navbar-collapse collapse">
 			<ul className="nav navbar-nav navbar-right">
-				<li onClick={this.handleClickStock} className={this.state.conditionStock? 'activeD': 'defaultD'}><Link to={"/"}>STOCK</Link></li>
-				<li onClick={this.handleClickObras} className={this.state.conditionObras? 'activeD': 'defaultD'}><Link to={"/obras"}>OBRAS</Link></li>
-				<li onClick={this.handleClickControl} className={this.state.conditionControl? 'activeD': 'defaultD'}><Link to={"/"}>CONTROL</Link></li>
+				<li onClick={this.handleClickStock} className={this.state.conditionStock? 'actived': 'default'}><Link to={"/"}>STOCK</Link></li>
+				<li onClick={this.handleClickObras} className={this.state.conditionObras? 'actived': 'default'}><Link to={"/obras"}>OBRAS</Link></li>
+				<li onClick={this.handleClickControl} className={this.state.conditionControl? 'actived': 'default'}><Link to={"/"}>CONTROL</Link></li>
 			</ul>
 		</div>
 	</div>

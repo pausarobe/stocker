@@ -181,7 +181,7 @@ class ObrasHome extends Component {
                   <td data-th="Fecha">{obra.fecha}</td>
                   <td data-th="Dirección">{obra.direccion}</td>
                   <td data-th="Acciones">
-                    <button onClick={()=>{this.handleClickDone(obra._id)}} className="btn btn-info btn-xs but"><span className="glyphicon glyphicon-ok"></span> Done</button>
+                    <button onClick={()=>{this.handleClickDone(obra._id)}} className="btn btn-info btn-xs but"><span className="glyphicon glyphicon-ok"></span> Finalizada</button>
                     <button className="btn btn-primary btn-xs but"
                             type="button" data-toggle="modal" data-target={"#editModal-" + obra._id}>
                             <span className="glyphicon glyphicon-pencil"></span> Edit
@@ -215,7 +215,7 @@ class ObrasHome extends Component {
                     </div>
                     <button className="btn btn-danger btn-xs but"
                             type="button" data-toggle="modal" data-target={"#deleteModal-" + obra._id}>
-                            <span className="glyphicon glyphicon-remove"></span> Delete
+                            <span className="glyphicon glyphicon-remove"></span> Borrar
                     </button>
                       <div id={"deleteModal-" + obra._id} className="modal fade" role="dialog">
                         <div className="modal-dialog">
@@ -268,7 +268,7 @@ class ObrasHome extends Component {
                     <button onClick={()=>{this.handleClickNoDone(obra._id)}} className="btn btn-info btn-xs but"><span className="glyphicon glyphicon-arrow-up"></span> Up</button>
                     <button className="btn btn-danger btn-xs but"
                             type="button" data-toggle="modal" data-target={"#deleteModal-" + obra._id}>
-                            <span className="glyphicon glyphicon-remove"></span> Delete
+                            <span className="glyphicon glyphicon-remove"></span> Borrar
                     </button>
                       <div id={"deleteModal-" + obra._id} className="modal fade" role="dialog">
                         <div className="modal-dialog">

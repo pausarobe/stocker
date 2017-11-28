@@ -13,12 +13,17 @@
 }
 
 .nav >li >a {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    font-weight: bold;
+    padding-top: 33px;
+    padding-bottom: 33px;
 }
 
-.nav >li >a:hover {
-    color: #01B0AE !important;
+.nav >li.default >a:hover {
+    color: #01B0AE;
+}
+
+.nav >li.actived >a:hover {
+    color: snow;
 }
 
 .navbar-toggle {
@@ -26,10 +31,10 @@
     margin: 25px 15px 25px 0;
 }
 
-.activeD { 
+.actived { 
     background-color: #01B0AE;
 }
 
-.defaultD {
+.default {
     background-color: snow;
 }
