@@ -50,7 +50,7 @@ router.route('/stocks/:categoria')
         const {categoria} = req.params
         const {fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio} = req.body
 
-        stockLogic.createProduct({categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio})
+        stockLogic.createProduct(categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio)
             .then(product => res.json({
                 status: 'OK',
                 message: 'New product created successfully',
@@ -83,7 +83,7 @@ router.route('/stocks/:categoria/:_id')
     .delete((req, res) => {
         const {categoria, _id} = req.params
 
-        stockLogic.deleteProduct({categoria, _id})
+        stockLogic.deleteProduct(categoria, _id)
             .then(product => res.json({
                 status: 'OK',
                 message: 'Product deleted successfully',
@@ -147,7 +147,7 @@ router.route('/obras')
     .post((req, res) => {
         const {nombre, fecha, direccion, done, productos} = req.body
 
-        obrasLogic.createObra({nombre, fecha, direccion, done, productos})
+        obrasLogic.createObra(nombre, fecha, direccion, done, productos)
             .then(newObra => res.json({
                 status: 'OK',
                 message: 'New obra created successfully',

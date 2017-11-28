@@ -30,7 +30,7 @@ class ObrasLogic {
 	}
 
 	updateObraProducts(idObra, stockSelected) {
-		return Promise.all(obraData.updateObraProducts(idObra, stockSelected))
+		return obraData.updateObraProducts(idObra, stockSelected)
 	}
 
 }

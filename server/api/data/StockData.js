@@ -21,12 +21,12 @@ class StockData {
 	}
 
 	createProduct(categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio) {
-		const product = new Stock(categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio)
+		const product = new Stock({categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio})
 		return product.save()
 	}
 
 	deleteProduct(categoria, _id) {
-		const deleteObra = new Stock(categoria, _id)
+		const deleteObra = new Stock({categoria, _id})
 		return deleteObra.remove()
 	}
 

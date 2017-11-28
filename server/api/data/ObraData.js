@@ -25,7 +25,7 @@ class ObraData {
  //  populate({ path: 'fans', select: 'email' });
 
 	createObra(nombre, fecha, direccion, done) {
-		const obra =  new Obra(nombre, fecha, direccion, done)
+		const obra =  new Obra({nombre, fecha, direccion, done})
 		return obra.save()
 	}
 
