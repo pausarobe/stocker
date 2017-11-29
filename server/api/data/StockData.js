@@ -1,9 +1,9 @@
 const Stock = require('./model/StockModel')
 
 class StockData {
-	list() {
-		return Stock.find().exec()
-	}
+	// list() {
+	// 	return Stock.find().exec()
+	// }
 
 	listCategories() {
 		return Stock.find().distinct('categoria').exec()
@@ -48,6 +48,13 @@ class StockData {
 
 	listAllProducts(idObras) {
 		return Stock.find().exec()
+	}
+
+	updateProductQuantity(_id, newStock) {
+		return Stock.findByIdAndUpdate(_id, 
+		{
+			"stock": newStock
+		})
 	}
 }
 

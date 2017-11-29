@@ -6,14 +6,13 @@ class ObraData {
 		return Obra.find().exec()
 	}
 
-	retrieveByName(nombre) {
-		return Obra.find({ nombre })
-			.populate('productos.producto')
-	}
-
 	retrieve(id) {
 		return Obra.findById(id)
 			.populate('productos.producto')
+	}
+
+	retrieveByName(nombre) {
+		return Obra.findOne({ nombre }).populate('productos.producto')
 	}
 
 	createObra(nombre, fecha, direccion, done) {
@@ -29,7 +28,7 @@ class ObraData {
 		return Obra.findByIdAndUpdate(_id, { $set: { "done": done } })
 	}
 
-	edit(_id, nombre, fecha, direccion) {
+	editObra(_id, nombre, fecha, direccion) {
 		return Obra.findOneAndUpdate(_id,
 			{
 				"nombre": nombre,
@@ -54,6 +53,15 @@ class ObraData {
 		return Promise.all(updates)
 			.then(() => this.retrieve(idObra))
 	}
+
+	deleteObraProduct(idObra, _id) {
+		return Obra.findOneAndUpdate(idObra,
+			{	
+				$pull: { productos: { producto: _id}}
+			},
+			{ new: true })
+	}
+
 }
 
 module.exports = ObraData

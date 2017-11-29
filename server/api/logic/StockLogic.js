@@ -24,6 +24,11 @@ class StockLogic {
 	listAllProducts(idObra) {
 		return stockData.listAllProducts(idObra)
 	}
+
+	updateProductQuantity(_id, newStock) {
+		return stockData.updateProductQuantity(_id, newStock)
+	}
+
 }
 
 module.exports = StockLogic

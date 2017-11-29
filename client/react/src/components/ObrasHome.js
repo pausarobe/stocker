@@ -20,7 +20,7 @@ class ObrasHome extends Component {
 
   handleClickDone = (_id) => {
     console.log('done!')
-    Api.done(_id)
+    Api.updateObraDone(_id)
       .then(() => Api.listObras()
         .then(obras => {
           this.setState({obras})
@@ -53,7 +53,7 @@ class ObrasHome extends Component {
   handleClickEdit = (_id, nombre, fecha, direccion) => {
     console.log('Edit!')
 
-    Api.edit(_id, nombre, fecha, direccion)
+    Api.editObra(_id, nombre, fecha, direccion)
       .then(() => Api.listObras()
         .then(obras => {
           this.setState({obras})

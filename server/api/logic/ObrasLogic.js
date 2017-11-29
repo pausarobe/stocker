@@ -5,10 +5,6 @@ class ObrasLogic {
 		return obraData.listObras()
 	}
 
-	name(nombre) {
-		return obraData.name(nombre)
-	}
-
 	createObra(nombre, fecha, direccion, done, productos) {
 		return obraData.createObra(nombre, fecha, direccion, done, productos)
 	}
@@ -17,7 +13,7 @@ class ObrasLogic {
 		return obraData.deleteObra(_id)
 	}
 
-	done(_id, done) {
+	updateObraDone(_id, done) {
 		return obraData.updateObraDone(_id, done)
 	}
 
@@ -25,14 +21,21 @@ class ObrasLogic {
 		return obraData.updateObraDone(_id, done)
 	}
 
-	edit(_id, nombre, fecha, direccion) {
-		return obraData.edit(_id, nombre, fecha, direccion)
+	editObra(_id, nombre, fecha, direccion) {
+		return obraData.editObra(_id, nombre, fecha, direccion)
 	}
 
 	updateObraProducts(idObra, stockSelected) {
 		return obraData.updateObraProducts(idObra, stockSelected)
 	}
+	
+	retrieveByName(nombre) {
+		return obraData.retrieveByName(nombre)
+	}
 
+	deleteObraProduct(idObra, _id) {
+		return obraData.deleteObraProduct(idObra, _id)
+	}
 }
 
 module.exports = ObrasLogic

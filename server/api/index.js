@@ -62,6 +62,23 @@ router.route('/stocks/:categoria')
             }))
     })
 
+router.route('/stock/:_id')
+    .put((req, res) => {
+        const { _id } = req.params
+        const { newStock } = req.body
+
+        stockLogic.updateProductQuantity(_id, newStock)
+            .then(product => res.json({
+                status: 'OK',
+                message: 'Stock Quantity updated successfully',
+                data: product
+            }))
+            .catch(err => res.json({
+                status:'KO',
+                message: err.message
+            }))
+    })
+
 router.route('/stocks/:categoria/:_id')
     //edita un producto de la categoria
     .put((req, res) => {
@@ -99,8 +116,7 @@ router.route('/update/obras/:idObra')
     //añade productos a una obra
     .put((req, res) => {
         const { idObra } = req.params
-        const { stockSelected } = req.body
-
+        const { stockSelected }= req.body
         obrasLogic.updateObraProducts(idObra, stockSelected)
             .then(obras => res.json({
                 status: 'OK',
@@ -121,6 +137,22 @@ router.route('/update/obras/:idObra')
                 status: 'OK',
                 messsage: 'Listed all products successfully',
                 data: products
+            }))
+            .catch(err => res.json({
+                status: 'KO',
+                message: err.message
+            }))
+    })
+    //borra un producto de una obra
+    .delete((req, res) => {
+        const { idObra } = req.params
+        const { _id } = req.body
+
+        obrasLogic.deleteObraProduct(idObra, _id)
+            .then(product => res.json({
+                status: 'OK',
+                message: 'Product deleted successfully',
+                data: product
             }))
             .catch(err => res.json({
                 status: 'KO',
@@ -165,7 +197,7 @@ router.route('/obras/:_id')
         const {_id} = req.params
         const {done} = req.body
 
-        obrasLogic.done(_id, done)
+        obrasLogic.updateObraDone(_id, done)
             .then(done => res.json({
                 status: 'OK',
                 message: 'Done successfully',
@@ -181,7 +213,7 @@ router.route('/obras/:_id')
         const {_id} = req.params
         const {nombre, fecha, direccion} = req.body
 
-        obrasLogic.edit({_id}, nombre, fecha, direccion)
+        obrasLogic.editObra({_id}, nombre, fecha, direccion)
             .then(edit => res.json({
                 status: 'OK',
                 message: 'Edited successfully',
@@ -209,15 +241,15 @@ router.route('/obras/:_id')
     })
 
 
-router.route('/obras/:nombre')
+router.route('/obras/nombre/:nombre')
     //lista una obra en concreto
     .get((req, res) => {
         const {nombre} = req.params
 
-        obrasLogic.name(nombre)
+        obrasLogic.retrieveByName(nombre)
             .then(stock => res.json({
                 status: 'OK',
-                message: `Obra listed successfully`,
+                message: 'Obra listed successfully',
                 data: stock
             }))
             .catch(err => res.json({

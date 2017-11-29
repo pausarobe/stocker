@@ -21,7 +21,7 @@ const Api = {
 	},
 
 	createProduct: function (categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio) {
-		return axios.post(this.url + '/stocks/' + categoria, {fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio})
+		return axios.post(this.url + '/stocks/' + categoria, {categoria, fecha, stock, unidad, marca, descripcion, refProveedor, cajas, proveedor, precio})
 			.then(res => res.data.data)
 	},
 
@@ -40,7 +40,7 @@ const Api = {
 			.then(res => res.data.data)
 	},
 
-	done: function (_id) {
+	updateObraDone: function (_id) {
 		return axios.patch(this.url + '/obras/' + _id, {done: true})
 			.then(res => res.data.data)
 	},
@@ -55,23 +55,34 @@ const Api = {
 			.then(res => res.data.data)
 	},
 
-	edit: function(_id, nombre, fecha, direccion) {
+	editObra: function(_id, nombre, fecha, direccion) {
 		return axios.put(this.url + '/obras/' + _id, {nombre, fecha, direccion})
 			.then(res => res.data.data)
 	},
 
-	name: function(nombre) {
-		return axios.get(this.url + '/obras/' + nombre)
+	retrieveByName: function(nombre) {
+		return axios.get(this.url + '/obras/nombre/' + nombre)
 			.then(res => res.data.data)
 	},
 
 	updateObraProducts: function(idObra, stockSelected) {
+		console.log(stockSelected)
 		return axios.put(this.url + '/update/obras/' + idObra, {stockSelected})
 			.then(res => res.data.data)
 	},
 
 	listAllProducts: function(idObra) {
 		return axios.get(this.url + '/update/obras/' + idObra)
+			.then(res => res.data.data)
+	},
+
+	updateProductQuantity: function(_id, newStock) {
+		return axios.put(this.url + /stock/ + _id, {newStock})
+			.then(res => res.data.data)
+	},
+
+	deleteObraProduct: function(idObra, _id) {
+		return axios.delete(this.url + '/update/obras/' + idObra, {_id})
 			.then(res => res.data.data)
 	}
 

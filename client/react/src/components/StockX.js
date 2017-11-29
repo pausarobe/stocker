@@ -23,7 +23,8 @@ class StockX extends Component {
             nombre: '',
             stockQuantity: 0,
             stockSelected: [],
-            idObra: ''
+            idObra: '',
+            stockBase: 0
         }
     }
 
@@ -79,23 +80,34 @@ class StockX extends Component {
       console.log(_id)
       console.log(nombre)
 
-      this.setState({nombre: nombre})
-      this.setState({idObra: _id})
+      this.setState({nombre: nombre, idObra: _id})
     }
 
     handleClickConfirm = () => {
 
       Api.updateObraProducts(this.state.idObra, this.state.stockSelected)
-        .then(()=> this.loadData())
+        .then(() => this.loadData())
+
+      const newStock = this.state.stockBase - this.state.stockQuantity
+
+      console.log(this.state.stockSelected[0]._id)
+      console.log(this.state.stockBase)
+      console.log(newStock)
+
+      Api.updateProductQuantity(this.state.stockSelected[0]._id, newStock)
+        .then(() => this.loadData())
     }
 
-    handleClickConfirmStock = (_id, descripcion) => {
+    handleClickConfirmStock = (_id, descripcion, stock) => {
       console.log(_id)
       console.log(descripcion)
+      console.log(stock)
       console.log(this.state.stockQuantity)
 
+      this.setState({stockBase: stock})
+
       const select = {
-        idProduct: _id,
+        _id,
         descripcion: descripcion,
         stockQuantity: this.state.stockQuantity
       }
@@ -281,12 +293,12 @@ class StockX extends Component {
         <tbody>
             {
                 this.state.products.map((product) => { 
-                var total = (product.precio * product.stock).toFixed(2)
+                // var total = (product.precio * product.stock).toFixed(2)
 
-                function result () {
+                // function result () {
                   
-                }
-                console.log(total)                 
+                // }
+                // console.log(total)                 
                     return (<tr>
                         <td data-th="Fecha">{product.fecha}</td>
                         <td data-th="Cantidad">{product.stock}</td>
@@ -321,7 +333,8 @@ class StockX extends Component {
                                     <button type="button" className="btn btn-default" data-dismiss="modal">Cerrar</button>
                                     <button onClick={() => {this.handleClickConfirmStock(
                                       product._id,
-                                      product.descripcion
+                                      product.descripcion,
+                                      product.stock
                                       )}} type="submit" className="btn btn-default signbuttons" data-dismiss="modal">CONFIRMAR CANTIDAD</button>
                                   </div>
                                 </div>
