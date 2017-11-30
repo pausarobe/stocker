@@ -494,7 +494,7 @@ class StockX extends Component {
                 <h4 className="modal-title">CONFIRMADO!</h4>
               </div>
               <div className="modal-body">
-                <p>Productos enviados a la obra satisfactoriamente</p>
+                <p>Productos enviados satisfactoriamente</p>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-default" data-dismiss="modal">Cerrar</button>

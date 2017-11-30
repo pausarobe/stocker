@@ -71,7 +71,7 @@ class ObrasX extends Component {
 						<strong>Dirección:</strong> {this.state.obras.direccion}
 					</div>
 					<div className="row col-md-6">
-						<p className="snow pull-right"><strong className="totalPrize">{this.state.totalPrizeInObra} €</strong></p>
+						<p className="snow pull-right"><strong className="totalPrize">{Number(this.state.totalPrizeInObra).toFixed(2)} €</strong></p>
 					</div>
 				</div>
 				</p>
@@ -120,7 +120,9 @@ class ObrasX extends Component {
                                     </div>
                                     <div className="modal-body">
                                       <div>
-                                        <p>Estás seguro de borrar este producto?</p>
+                                        <p>Estás seguro de borrar el producto de <span className="obraName">{product.producto.marca}</span> ?
+                                            <br/>- {product.producto.descripcion}
+                                        </p>
                                       </div>
                                       <div className="row">
                                           <div className="col-12-xs text-center">
@@ -139,7 +141,7 @@ class ObrasX extends Component {
 				</tbody>
 			</table>
 <div className="botspace">
-  <p className="snow pull-right">Total: <strong className="big">{this.state.totalPrizeInObra} €</strong> 
+  <p className="snow pull-right">Total: <strong className="big">{Number(this.state.totalPrizeInObra).toFixed(2)} €</strong> 
   </p>
 </div>
 		</div>)
