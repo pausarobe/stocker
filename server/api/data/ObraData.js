@@ -44,7 +44,8 @@ class ObraData {
 		})
 
 		//array de promesas
-		const updates = newStockSelected.map(product => Obra.findByIdAndUpdate(idObra,
+		const updates = newStockSelected.map(product => Obra.findByIdAndUpdate(
+			{ _id: idObra },
 			{
 				$push: { "productos": product }
 			}))
@@ -55,7 +56,8 @@ class ObraData {
 	}
 
 	deleteObraProduct(idObra, idStock) {
-		return Obra.findOneAndUpdate(idObra,
+		return Obra.findOneAndUpdate(
+			{ _id: idObra},
 			{	
 				$pull: { productos: { producto: idStock}}
 			},

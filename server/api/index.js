@@ -150,10 +150,10 @@ router.route('/obras/:idObra/stock/:idStock')
         const { idObra, idStock } = req.params
 
         obrasLogic.deleteObraProduct(idObra, idStock)
-            .then(product => res.json({
+            .then(productos => res.json({
                 status: 'OK',
                 message: 'Product deleted successfully',
-                data: product
+                data: productos
             }))
             .catch(err => res.json({
                 status: 'KO',

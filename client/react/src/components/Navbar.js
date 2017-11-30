@@ -56,7 +56,7 @@ class Navbar extends Component {
 			<ul className="nav navbar-nav navbar-right">
 				<li onClick={this.handleClickStock} className={this.state.conditionStock? 'actived': 'default'}><Link to={"/"}>STOCK</Link></li>
 				<li onClick={this.handleClickObras} className={this.state.conditionObras? 'actived': 'default'}><Link to={"/obras"}>OBRAS</Link></li>
-				<li onClick={this.handleClickControl} className={this.state.conditionControl? 'actived': 'default'}><Link to={"/"}>CONTROL</Link></li>
+				{/*<li onClick={this.handleClickControl} className={this.state.conditionControl? 'actived': 'default'}><Link to={"/"}>CONTROL</Link></li>*/}
 			</ul>
 		</div>
 	</div>

@@ -196,13 +196,13 @@ class ObrasHome extends Component {
                           <div className="modal-body">
                             <form>
                               <div className="form-group">
-                                <input className="form-control" type="text" name="nombre" value={obra.nombre} placeholder="NAME" onChange={this.onChangeNombre}/>
+                                <input className="form-control" type="text" name="nombre" placeholder="NAME" onChange={this.onChangeNombre}/>
                               </div>
                               <div className="form-group">
-                                <input className="form-control" type="date" name="fecha" value={obra.fecha} onChange={this.onChangeFecha}/>
+                                <input className="form-control" type="date" name="fecha" onChange={this.onChangeFecha}/>
                               </div>
                               <div className="form-group">
-                                <input className="form-control" type="text" name="direccion" value={obra.direccion} placeholder="DIRECCIÓN" onChange={this.onChangeDireccion}/>
+                                <input className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN" onChange={this.onChangeDireccion}/>
                               </div>
                             </form>
                           </div>

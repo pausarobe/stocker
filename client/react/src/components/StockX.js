@@ -24,7 +24,8 @@ class StockX extends Component {
             stockQuantity: 0,
             stockSelected: [],
             idObra: '',
-            stockBase: 0
+            stockBase: 0,
+            totalPrize: 0
         }
     }
 
@@ -34,6 +35,7 @@ class StockX extends Component {
             .then(() => Api.showCategory(this.props.match.params.category)
                 .then(products => {
                     this.setState({products})
+                    this.calculateTotal(products)
                 })
                 .catch(err => {
                     console.error(err)
@@ -50,6 +52,7 @@ class StockX extends Component {
             .then(() => Api.showCategory(this.props.match.params.category)
                 .then(products => {
                     this.setState({products})
+                    this.calculateTotal(products)
                 })
                 .catch(err => {
                     console.error(err)
@@ -66,6 +69,7 @@ class StockX extends Component {
            .then(() => Api.showCategory(this.props.match.params.category)
                 .then(products => {
                     this.setState({products})
+                    this.calculateTotal(products)
                 })
                 .catch(err => {
                     console.error(err)
@@ -190,22 +194,32 @@ class StockX extends Component {
         this.setState({precio: event.target.value})
     }
 
+    calculateTotal = (products) => {
+      let totalPrize = 0
+      products.map(product => {
+        totalPrize += (product.precio * product.stock)
+      })
+
+      this.setState({totalPrize})
+    }
+
     loadData =  () => {
       Api.showCategory(this.props.match.params.category)
             .then(products => {
                 this.setState({products})
+                this.calculateTotal(products)
             })
             .catch(function (err) {
                 console.error (err)
             })
 
-        Api.listObras()
-          .then(obras => {
-            this.setState({obras})
-          })
-          .catch(err => {
-            console.error(err)
-          })
+      Api.listObras()
+        .then(obras => {
+          this.setState({obras})
+        })
+        .catch(err => {
+          console.error(err)
+        })
     }
 
     componentWillMount() {
@@ -292,13 +306,7 @@ class StockX extends Component {
     </thead>
         <tbody>
             {
-                this.state.products.map((product) => { 
-                // var total = (product.precio * product.stock).toFixed(2)
-
-                // function result () {
-                  
-                // }
-                // console.log(total)                 
+                this.state.products.map((product) => {                  
                     return (<tr>
                         <td data-th="Fecha">{product.fecha}</td>
                         <td data-th="Cantidad">{product.stock}</td>
@@ -434,6 +442,12 @@ class StockX extends Component {
 </div>
 
 <div className="container botspace">
+  
+  <p className="snow pull-right">Total: <strong className="totalPrize">{(this.state.totalPrize).toFixed(2)} €</strong> 
+  </p>
+</div>
+
+<div className="container botspace">
 	<div className="row col-md-7">
 		<h3 className="text-center">Productos para añadir</h3>
 		{
@@ -471,21 +485,31 @@ class StockX extends Component {
         </div>
 			</div>
 			<div className="col-md-3">
-				<button onClick={()=>{this.handleClickConfirm()}} type="button" className="btn btn-default btn-xlarge">Confirmar</button>
-			</div>
+				<button onClick={()=>{this.handleClickConfirm()}} type="button" className="btn btn-default btn-xlarge" data-toggle="modal" data-target="#confirm">Confirmar</button>
+        <div id="confirm" className="modal fade" role="dialog">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                <h4 className="modal-title">CONFIRMADO!</h4>
+              </div>
+              <div className="modal-body">
+                <p>Productos enviados a la obra satisfactoriamente</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button onClick={()=>{this.handleClickRemoveProduct()}} type="submit" className="btn btn-default signbuttons" data-dismiss="modal">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 		
 	</div>
 </div>
 
-<div className="container botspace">
-  
-  <p className="snow pull-right">Total: </p>
-</div>
 </div>)
 	}
 }
 
 export default StockX
-
-
-

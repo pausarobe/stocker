@@ -7,3 +7,8 @@ p {
     border-left-color: #01B0AE;
     border-left-width: 10px;
 }
+
+.totalPrize {
+	font-size: 20px;
+	color: #01B0AE;
+}

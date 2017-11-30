@@ -11,7 +11,8 @@ class ObrasX extends Component {
 
 		this.state = {
 			obras: {
-				productos: []
+				productos: [],
+				totalPrizeInObra: 0
 			}
 		}
 
@@ -24,7 +25,7 @@ class ObrasX extends Component {
 			.then(()=> Api.retrieveByName(this.props.match.params.nombre)
 				.then(obras => {
 					this.setState({obras})
-					console.log(this.state)
+					this.calculateTotal(obras)
 				})
 				.catch(err => {
 					console.error(err)
@@ -36,11 +37,22 @@ class ObrasX extends Component {
 
 	}
 
+	calculateTotal = (obras) => {
+		console.log(obras)
+		let totalPrizeInObra = 0
+		obras.productos.map(obra => {
+			totalPrizeInObra += (obra.producto.precio * obra.stockQuantity)
+		})
+
+		this.setState({totalPrizeInObra})
+	}
+
 	componentDidMount() {
 		Api.retrieveByName(this.props.match.params.nombre)
 			.then(obras => {
 				this.setState({obras})
-				console.log(this.state)
+				console.log(obras)
+				this.calculateTotal(obras)
 			})
 			.catch(err => {
 				console.error(err)
@@ -52,9 +64,16 @@ class ObrasX extends Component {
 			<h1>obra de <span className="title">{this.props.match.params.nombre.toUpperCase()}</span></h1>
 			<div className="snow">
 				<p>
-					<strong>Nombre:</strong> {this.state.obras.nombre}<br/>
-					<strong>Fecha inicio de la obra:</strong> {this.state.obras.fecha}<br/>
-					<strong>Dirección:</strong> {this.state.obras.direccion}
+				<div className="container">
+					<div className="row col-md-6">
+						<strong>Nombre:</strong> {this.state.obras.nombre}<br/>
+						<strong>Fecha inicio de la obra:</strong> {this.state.obras.fecha}<br/>
+						<strong>Dirección:</strong> {this.state.obras.direccion}
+					</div>
+					<div className="row col-md-6">
+						<p className="snow pull-right"><strong className="totalPrize">{this.state.totalPrizeInObra} €</strong></p>
+					</div>
+				</div>
 				</p>
 			</div>
 			<h3>Productos</h3>
@@ -87,7 +106,7 @@ class ObrasX extends Component {
                         <td data-th="Ud caja">{product.producto.cajas}</td>
                         <td data-th="Proveedor">{product.producto.proveedor}</td>
                         <td data-th="Precio Ud">{product.producto.precio} €</td>
-                        <td data-th="Precio Total">{(product.producto.precio * product.producto.stock).toFixed(2)} €</td>
+                        <td data-th="Precio Total">{(product.producto.precio * product.stockQuantity).toFixed(2)} €</td>
                         <td data-th="Acción" className="text-center">
                             <button className="btn btn-danger btn-xs but"
                                     type="button" data-toggle="modal" data-target={"#deleteProductModal-" + product.producto._id}>
@@ -119,6 +138,10 @@ class ObrasX extends Component {
 					}
 				</tbody>
 			</table>
+<div className="botspace">
+  <p className="snow pull-right">Total: <strong className="big">{this.state.totalPrizeInObra} €</strong> 
+  </p>
+</div>
 		</div>)
 	}
 
