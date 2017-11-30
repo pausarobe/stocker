@@ -54,10 +54,10 @@ class ObraData {
 			.then(() => this.retrieve(idObra))
 	}
 
-	deleteObraProduct(idObra, _id) {
+	deleteObraProduct(idObra, idStock) {
 		return Obra.findOneAndUpdate(idObra,
 			{	
-				$pull: { productos: { producto: _id}}
+				$pull: { productos: { producto: idStock}}
 			},
 			{ new: true })
 	}

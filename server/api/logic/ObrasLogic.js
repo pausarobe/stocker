@@ -33,8 +33,8 @@ class ObrasLogic {
 		return obraData.retrieveByName(nombre)
 	}
 
-	deleteObraProduct(idObra, _id) {
-		return obraData.deleteObraProduct(idObra, _id)
+	deleteObraProduct(idObra, idStock) {
+		return obraData.deleteObraProduct(idObra, idStock)
 	}
 }
 

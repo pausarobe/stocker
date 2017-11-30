@@ -143,12 +143,13 @@ router.route('/update/obras/:idObra')
                 message: err.message
             }))
     })
+
+router.route('/obras/:idObra/stock/:idStock')
     //borra un producto de una obra
     .delete((req, res) => {
-        const { idObra } = req.params
-        const { _id } = req.body
+        const { idObra, idStock } = req.params
 
-        obrasLogic.deleteObraProduct(idObra, _id)
+        obrasLogic.deleteObraProduct(idObra, idStock)
             .then(product => res.json({
                 status: 'OK',
                 message: 'Product deleted successfully',

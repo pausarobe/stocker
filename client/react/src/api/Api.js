@@ -81,8 +81,8 @@ const Api = {
 			.then(res => res.data.data)
 	},
 
-	deleteObraProduct: function(idObra, _id) {
-		return axios.delete(this.url + '/update/obras/' + idObra, {_id})
+	deleteObraProduct: function(idObra, idStock) {
+		return axios.delete(this.url + '/obras/' + idObra + /stock/ + idStock)
 			.then(res => res.data.data)
 	}
 
