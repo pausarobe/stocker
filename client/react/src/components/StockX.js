@@ -422,7 +422,9 @@ class StockX extends Component {
                                     </div>
                                     <div className="modal-body">
                                       <div>
-                                        <p>Estás seguro de borrar este producto?</p>
+                                        <p>Estás seguro de borrar el producto de <span className="obraName">{product.marca}</span> ?
+                                            <br/>- {product.descripcion}
+                                        </p>
                                       </div>
                                       <div className="row">
                                           <div className="col-12-xs text-center">
@@ -441,10 +443,8 @@ class StockX extends Component {
         </tbody></table>
 </div>
 
-<div className="container botspace">
-  
-  <p className="snow pull-right">Total: <strong className="totalPrize">{(this.state.totalPrize).toFixed(2)} €</strong> 
-  </p>
+<div className="container">  
+  <p className="snow pull-right">Total: <strong className="totalPrize">{(this.state.totalPrize).toFixed(2)} €</strong></p>
 </div>
 
 <div className="container botspace">
