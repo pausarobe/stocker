@@ -2,8 +2,8 @@ import axios from 'axios'
 //const axios = require('axios')
 
 const Api = {
-	url: 'http://localhost:3002/api',
-	//url: 'https://floating-plateau-73977.herokuapp.com/api',
+	//url: 'http://localhost:3002/api',
+	url: 'https://floating-plateau-73977.herokuapp.com/api',
 
 	listByCategories: function () {
 		return axios.get(this.url + '/stocks')
