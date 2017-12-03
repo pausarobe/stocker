@@ -19,20 +19,16 @@ Stocker es un trabajo Full-Stack presentado como proyecto final del bootcamp de 
 
 ### Instalación
 
-* Necesitas tener instalado el `NodeJS` con `npm`.
-* Haz un clon de este proyecto: 
-    `git clone https://github.com/pausarobe/stocker.git`
+*
 
 
 ### Run
 
-`$ npm start`
-
-Todas las dependencias quedaran instaladas automáticamente.
+*
 
 ### Motivación
 
-Es un proyecto realizado a medida para la empresa de diseño de interiores [Danma](https://www.danma.es/). Trata de la gestión del stock de su almacén relacionado con las obras que tienen en curso.
+Es un proyecto realizado a medida para la empresa de diseño de interiores [Danma Estudio Creativo SL](https://www.danma.es/). Es un gestor de stock que permite verificar el stock de su almacén, así como llevar un control minucioso de los productos correspondientes a cada obra en curso.
 
 ### Construido con
 
