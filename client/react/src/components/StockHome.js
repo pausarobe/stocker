@@ -30,7 +30,7 @@ class StockHome extends Component {
 			<div className="container">
 				{
 					this.state.categorias.map((categoria) => {
-						return <Link to={`/stock/${categoria}`}><button className="button raise">{categoria}<br/><i className="material-icons">input</i></button></Link>
+						return <Link to={`/stock/${categoria}`}><button className="buttonProducts raise">{categoria}<br/><i className="material-icons">input</i></button></Link>
 					})
 				}
 			</div>

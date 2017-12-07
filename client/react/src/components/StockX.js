@@ -219,57 +219,63 @@ class StockX extends Component {
                                 <h4 className="modal-title">Nuevo Producto</h4>
                             </div>
                             <div className="modal-body">
-                                <form className="form-horizontal" role="form">
+                                <form className="form-horizontal" data-toggle="validator" role="form">
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Fecha</label>
+                                        <label className="col-sm-2 control-label" for="fecha">Fecha</label>
                                         <div className="col-sm-10">
-                                            <input className="form-control" type="date" name="fecha" onChange={this.onChangeFecha}/>
+                                            <input id="fecha" className="form-control" type="date" name="fecha" onChange={this.onChangeFecha}/>
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Cantidad</label>
+                                        <label className="col-sm-2 control-label" for="cantidad">Cantidad</label>
                                         <div className="col-sm-10">
-                                            <input className="form-control" type="text" name="stock" placeholder="CANTIDAD" onChange={this.onChangeCantidad}/>
+                                            <input id="cantidad" className="form-control" type="number" name="stock" placeholder="CANTIDAD" onChange={this.onChangeCantidad}/>
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Unidades</label>
+                                        <label className="col-sm-2 control-label" for="unidades">Unidades</label>
                                         <div className="col-sm-10">
-                                            <input className="form-control" type="text" name="unidad" placeholder="UNIDADES" onChange={this.onChangeUnidades}/>
+                                            <select id="unidades" className="form-control" type="text" name="unidad" placeholder="UNIDADES" onChange={this.onChangeUnidades}>
+                                                <option>Litros</option>
+                                                <option>Metros</option>
+                                                <option>Metros 2</option>
+                                                <option>Kilos</option>
+                                                <option>Ud</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Marca</label>
+                                        <label className="col-sm-2 control-label" for="marca">Marca</label>
                                         <div className="col-sm-10">
-                                            <input className="form-control" type="text" name="marca" placeholder="MARCA" onChange={this.onChangeMarca}/>
+                                            <input id="marca" className="form-control" type="text" name="marca" placeholder="MARCA" onChange={this.onChangeMarca}/>
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Descripción</label>
+                                        <label className="col-sm-2 control-label" for="descripcion">Descripción</label>
                                         <div className="col-sm-10">
-                                            <textarea className="form-control" type="text" name="descripcion" placeholder="DESCRIPCIÓN" onChange={this.onChangeDescripcion}/>
+                                            <textarea id="descripcion" className="form-control" type="text" rows="4" name="descripcion" placeholder="DESCRIPCIÓN" onChange={this.onChangeDescripcion}/>
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Nº Ref</label>
+                                        <label className="col-sm-2 control-label" for="ref">Nº Ref</label>
                                         <div className="col-sm-4">
-                                            <input className="form-control" type="text" name="refProveedor" placeholder="Nº DE REFERENCIA" onChange={this.onChangeRef}/>
+                                            <input id="ref" className="form-control" type="text" name="refProveedor" placeholder="Nº DE REFERENCIA" onChange={this.onChangeRef}/>
                                         </div>
-                                        <label className="col-sm-2 control-label" for="textinput">Ud caja</label>
+                                        <label className="col-sm-2 control-label" for="caja">Ud caja</label>
                                         <div className="col-sm-4">
-                                            <input className="form-control" type="text" name="cajas" placeholder="UNIDADES POR CAJA" onChange={this.onChangeUdCaja}/>
+                                            <input id="caja" className="form-control" type="number" name="cajas" placeholder="UD POR CAJA" onChange={this.onChangeUdCaja}/>
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Proveedor</label>
+                                        <label className="col-sm-2 control-label" for="proveedor">Proveedor</label>
                                         <div className="col-sm-10">
-                                            <input className="form-control" type="text" name="proveedor" placeholder="PROVEEDOR" onChange={this.onChangeProveedor}/>
+                                            <input id="proveedor" className="form-control" type="text" name="proveedor" placeholder="PROVEEDOR" onChange={this.onChangeProveedor}/>
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-sm-2 control-label" for="textinput">Precio</label>
+                                        <label className="col-sm-2 control-label" for="precio">Precio</label>
                                         <div className="col-sm-10">
-                                            <input className="form-control" type="text" name="precio" placeholder="PRECIO POR UNIDAD" onChange={this.onChangePrecioUd}/>
+                                            <input id="precio" className="form-control" type="number" name="precio" placeholder="PRECIO POR UNIDAD" onChange={this.onChangePrecioUd}/>
                                         </div>
                                     </div>
                                 </form>

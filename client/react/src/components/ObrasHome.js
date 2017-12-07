@@ -116,6 +116,7 @@ class ObrasHome extends Component {
     componentWillMount() {
         Api.listObras()
             .then(obras => {
+                console.log(obras)
                 this.setState({obras})
             })
             .catch(function (err) {
@@ -137,23 +138,23 @@ class ObrasHome extends Component {
                         <h4 className="modal-title">Nueva Obra</h4>
                     </div>
                     <div className="modal-body">
-                        <form className="form-horizontal" role="form">
+                        <form className="form-horizontal" data-toggle="validator" role="form">
                             <div className="form-group">
-                                <label className="col-sm-2 control-label" for="textinput">Nombre</label>
+                                <label className="col-sm-2 control-label" for="obra">Nombre</label>
                                 <div className="col-sm-10">
-                                    <input className="form-control" type="text" name="nombre" placeholder="NOMBRE OBRA" onChange={this.onChangeNombre}/>
+                                    <input id="obra" className="form-control" type="text" name="nombre" placeholder="NOMBRE OBRA" onChange={this.onChangeNombre} pattern="pau" required/>
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label className="col-sm-2 control-label" for="textinput">Fecha</label>
+                                <label className="col-sm-2 control-label" for="fecha">Fecha</label>
                                 <div className="col-sm-10">
-                                    <input className="form-control" type="date" name="fecha" onChange={this.onChangeFecha}/>
+                                    <input id="fecha" className="form-control" type="date" name="fecha" onChange={this.onChangeFecha} required/>
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label className="col-sm-2 control-label" for="textinput">Dirección</label>
+                                <label className="col-sm-2 control-label" for="direccion">Dirección</label>
                                 <div className="col-sm-10">
-                                    <input className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN" onChange={this.onChangeDireccion}/>
+                                    <input id="direccion" className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN" onChange={this.onChangeDireccion} required/>
                                 </div>
                             </div>
                         </form>
@@ -209,19 +210,19 @@ class ObrasHome extends Component {
                                                     <div className="form-group">
                                                         <label className="col-sm-2 control-label" for="textinput">Nombre</label>
                                                         <div className="col-sm-10">
-                                                            <input className="form-control" type="text" name="nombre" placeholder="NOMBRE OBRA" onChange={this.onChangeNombre}/>
+                                                            <input className="form-control" type="text" name="nombre" placeholder="NOMBRE OBRA" onChange={this.onChangeNombre} required/>
                                                         </div>
                                                     </div>
                                                     <div className="form-group">
                                                         <label className="col-sm-2 control-label" for="textinput">Fecha</label>
                                                         <div className="col-sm-10">
-                                                            <input className="form-control" type="date" name="fecha" onChange={this.onChangeFecha}/>
+                                                            <input className="form-control" type="date" name="fecha" onChange={this.onChangeFecha} required/>
                                                         </div>
                                                     </div>
                                                     <div className="form-group">
                                                         <label className="col-sm-2 control-label" for="textinput">Dirección</label>
                                                         <div className="col-sm-10">
-                                                            <input className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN" onChange={this.onChangeDireccion}/>
+                                                            <input className="form-control" type="text" name="direccion" placeholder="DIRECCIÓN" onChange={this.onChangeDireccion} required/>
                                                         </div>
                                                     </div>
                                                 </form>

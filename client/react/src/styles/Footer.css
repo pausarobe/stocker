@@ -1,5 +1,5 @@
 footer{
-   background-color: snow;
+    background-color: snow;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -15,6 +15,6 @@ footer .footer {
     line-height: 100%;
 }
 
-.nom {
+.greenDanma {
     color: #01B0AE;
 }

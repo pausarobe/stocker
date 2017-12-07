@@ -1,6 +1,7 @@
 #main {
    position: relative;
 }
+
 #main:after {
     content : "";
     display: block;
