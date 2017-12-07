@@ -92,10 +92,10 @@ h1, h3, h4 {
 /*MODAL_________________________________________*/
 
 
-.form-group{
+/*.form-group{
     width: 100%;
     line-height: 50px;   
-}
+}*/
 
 .signbuttons{
     margin-bottom: 35px;
@@ -108,12 +108,16 @@ input{
     border-top: none !important;
     border-right: none !important;
     border-left: none !important;
-    border-bottom: 2px dotted #01B0AE !important;
+    border-bottom: 1.5px dotted #01B0AE !important;
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     -moz-transition: none !important;
     -webkit-transition: none !important;
+}
+
+textarea{
+    border: 1.5px dotted #01B0AE !important;
 }
 
 /*______________________________*/
