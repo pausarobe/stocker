@@ -17,6 +17,12 @@
 
 Stocker es un trabajo Full-Stack presentado como proyecto final del bootcamp de [SkyLabCoders Academy](http://www.skylabcoders.com/es/).
 
+### Demo en Heroku
+
+https://stark-meadow-76898.herokuapp.com/#/
+
+(Heroku al ser gratuito puede que tarde unos segundos de más en cargar la primera vez)
+
 ### Instalación
 
 *
